@@ -1,0 +1,154 @@
+================================================================================
+CANCELLED SIGNALS ANALYSIS: BNB & SOL at 17:55
+================================================================================
+
+📊 SAMPLE SIZE:
+  Winners: 3 signals
+  Losers: 3 signals
+  Cancelled: 2 signals
+
+================================================================================
+CANCELLED SIGNALS DETAILS
+================================================================================
+
+🔶 CANCELLED #1: BNBUSDT 17:55 SELL
+  Entry: 1121.54 | VWAP: 1111.17 | Price vs VWAP: +0.93%
+  CVD: -2,998,674 | OI Change: -0.03% | Liq Ratio: 3.43
+  RSI: 54.20 | Confidence: 65% | Duration: 34 min
+  ⚠️ Reason: Moderate conditions, likely lost confluence soon after
+
+🔶 CANCELLED #2: SOLUSDT 17:55 SELL
+  Entry: 189.98 | VWAP: 190.10 | Price vs VWAP: -0.06% (BELOW!)
+  CVD: -18,531,352 (EXTREME!) | OI Change: +0.02% (INCREASED!)
+  Liq Ratio: 1.11 (balanced) | RSI: 42.27 | Confidence: 81%
+  Duration: 26 min
+  ⚠️ Reason: Price BELOW VWAP for SELL + OI increasing (wrong direction)
+
+================================================================================
+COMPARISON TABLE: WINNERS vs LOSERS vs CANCELLED
+================================================================================
+
+Indicator                 Winners         Losers          Cancelled      
+---------------------------------------------------------------------------
+Confidence                        0.71           0.65           0.73
+Price vs VWAP (%)                 0.55           1.06           0.44
+CVD                        -2344088.14   -14243797.36   -10765013.00
+OI Change (%)                    -0.01          -0.17          -0.00
+Liq Ratio                         3.27           1.94           2.27
+RSI                              50.78          70.27          48.23
+Duration (min)                   28.33          19.00          30.00
+Market Strength                   1.13           1.46           1.38
+
+================================================================================
+🔍 KEY INSIGHTS - CANCELLED SIGNALS
+================================================================================
+
+1. ⚠️ **BNBUSDT CANCELLED - Moderate Setup (Similar to Winners)**:
+   - RSI: 54.20 (✅ Neutral, like winners)
+   - Price vs VWAP: +0.93% (✅ Moderate extension)
+   - CVD: -3M (⚠️ Higher than LINK winners -200K, but less than ETH losers -14M)
+   - Liq Ratio: 3.43 (✅ Good, shorts liquidating)
+   - OI Change: -0.03% (✅ Slight decline)
+   
+   WHY CANCELLED? Likely lost 3/4 confluence soon after signal generation.
+   This was a BORDERLINE signal - moderate indicators could go either way.
+
+2. 🚨 **SOLUSDT CANCELLED - RED FLAGS (System Caught It!)**:
+   - Price: 189.98 vs VWAP: 190.10 → BELOW VWAP for a SELL signal! ❌
+   - OI Change: +0.02% → OI INCREASED instead of decreased! ❌
+   - CVD: -18.5M → EXTREME selling pressure ❌
+   - High Confidence: 81% → High confidence on wrong setup ❌
+   
+   WHY CANCELLED? Price below VWAP + OI increasing = conflicting signals!
+   System correctly identified this as invalid setup and cancelled it.
+
+3. 📊 **SOLUSDT at 17:50 WON, 17:55 CANCELLED - What Changed?**
+   
+   17:50 WINNER:
+   - Price: 190.27 | VWAP: 190.11 → +0.08% ABOVE VWAP ✅
+   - CVD: -6.6M (moderate for SOL)
+   - OI Change: ~0% (stable)
+   - RSI: 43.8
+   
+   17:55 CANCELLED (5 mins later):
+   - Price: 189.98 | VWAP: 190.10 → -0.06% BELOW VWAP ❌
+   - CVD: -18.5M (EXTREME, nearly 3x worse!)
+   - OI Change: +0.02% (wrong direction!)
+   - RSI: 42.3
+   
+   In just 5 minutes, price crossed BELOW VWAP and CVD became EXTREME!
+   This invalidated the SELL setup → correct cancellation.
+
+4. 📈 **Symbol Performance Context**:
+   - LINKUSDT: 50% win rate (Good performer, winners show this)
+   - BNBUSDT: 24% win rate (Poor performer, cancelled was right call)
+   - SOLUSDT: 18% win rate (Worst performer, 17:50 win is rare, 17:55 correctly rejected)
+   - ETHUSDT: 18% win rate (All losers in sample are ETHUSDT)
+
+
+================================================================================
+✅ VALIDATION OF CANCELLATION LOGIC
+================================================================================
+
+The system's cancellation mechanism is working CORRECTLY:
+
+✅ **BNBUSDT Cancellation:**
+   - Moderate setup (not extreme)
+   - Lost confluence shortly after generation
+   - BNB has 24% win rate, so avoiding borderline signals is smart
+
+✅ **SOLUSDT Cancellation:**
+   - Price BELOW VWAP for a SELL (contradictory positioning)
+   - OI INCREASED instead of decreased (wrong trend)
+   - Extreme CVD (-18.5M vs -6.6M for winner 5 min earlier)
+   - These are clear red flags that invalidate the setup
+
+🎯 **Pattern Confirmation:**
+   Winners: Moderate indicators, proper positioning vs VWAP, OI in right direction
+   Losers: Extreme indicators, overbought RSI, extended from VWAP
+   Cancelled: Either lost confluence OR had contradictory signals
+
+The cancellation system is PROTECTING you from bad trades!
+
+
+================================================================================
+🚀 OPTIMIZATION RECOMMENDATIONS - UPDATED
+================================================================================
+
+Based on Winners (3), Losers (3), Cancelled (2):
+
+1. **VWAP Positioning is CRITICAL:**
+   - For SELL signals, price MUST be ABOVE VWAP
+   - Reject if price < VWAP (like cancelled SOLUSDT)
+   - Winners: +0.08% to +0.89% above VWAP
+   - Losers: +0.78% to +1.56% above VWAP
+   - OPTIMAL: +0.0% to +1.0% above VWAP for SELL
+
+2. **OI Direction Matters:**
+   - For SELL signals, OI should decline or stay flat
+   - Reject if OI increases (like cancelled SOLUSDT +0.02%)
+   - Winners: -0.02% to 0.0% (flat/slight decline)
+   - Losers: -0.02% to -0.30% (varied)
+
+3. **CVD Thresholds by Symbol:**
+   - LINKUSDT: -150K to -500K (winners were in this range)
+   - SOLUSDT: -5M to -10M (winner was -6.6M, cancelled was -18.5M)
+   - BNBUSDT: < -3M might be too aggressive
+   - ETHUSDT: Avoid CVD < -15M (all extreme CVD failed)
+
+4. **RSI Filter (CRITICAL):**
+   - Winners: RSI 43.8-55.4 (neutral zone)
+   - Losers: RSI 68.3-72.5 (overbought)
+   - REJECT SELL when RSI > 65
+
+5. **Symbol-Specific Weight Adjustment:**
+   - LINKUSDT: Keep current weights (50% win rate)
+   - BNBUSDT: Reduce weights or increase thresholds (24% win rate)
+   - SOLUSDT: Tighten CVD limits (18% win rate)
+   - ETHUSDT: Significantly reduce or pause (18% win rate)
+
+6. **Confluence Validation:**
+   - Current system correctly cancels when positioning is wrong
+   - Strengthen VWAP positioning rules (price vs VWAP for direction)
+   - Strengthen OI direction validation
+

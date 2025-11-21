@@ -1,0 +1,169 @@
+modules = ["python-3.11"]
+[agent]
+expertMode = true
+integrations = ["github:1.0.0"]
+
+[nix]
+channel = "stable-25_05"
+packages = ["cairo", "ffmpeg-full", "freetype", "ghostscript", "glibcLocales", "gobject-introspection", "gtk3", "libxcrypt", "libyaml", "pkg-config", "qhull", "tcl", "tk", "xsimd"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Smart Money Signal Bot"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "CVD Service"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Liquidation Service"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Signal Tracker"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Watchdog Monitor"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "BingX Auto-Trader"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Data Feeds Service"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "UIF Feature Engine"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "AI Analyst + Commands"
+
+[[workflows.workflow]]
+name = "Smart Money Signal Bot"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python main.py"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[workflows.workflow]]
+name = "CVD Service"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python cvd_service.py"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[workflows.workflow]]
+name = "Liquidation Service"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python liquidation_service.py"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[workflows.workflow]]
+name = "Signal Tracker"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python signal_tracker.py"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[workflows.workflow]]
+name = "Watchdog Monitor"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python watchdog.py"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[workflows.workflow]]
+name = "BingX Auto-Trader"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python bingx_trader_service.py"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[workflows.workflow]]
+name = "Data Feeds Service"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python services/data_feeds/runner.py"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[workflows.workflow]]
+name = "UIF Feature Engine"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python services/uif_feature_engine/runner.py"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[workflows.workflow]]
+name = "AI Analyst + Commands"
+mode = "sequential"
+author = "agent"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python services/ai_analyst/combined_runner_webhook.py"
+waitForPort = 5000
+
+[deployment]
+deploymentTarget = "vm"
+run = ["bash", "-c", "python cvd_service.py & python liquidation_service.py & python main.py"]
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[[ports]]
+localPort = 8081
+externalPort = 8081
+
+[[ports]]
+localPort = 45343
+externalPort = 3000

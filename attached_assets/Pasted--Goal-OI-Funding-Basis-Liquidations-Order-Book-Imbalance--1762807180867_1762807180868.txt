@@ -1,0 +1,79 @@
+
+
+Goal: собрать недостающие фичи (OI, Funding, Basis, Liquidations, Order Book Imbalance) в отдельном сервисе, read-only, без изменений сигнал-логики. Работать сразу по всем 11 символам.
+
+0) Constraints
+	•	Не трогать BUY/SELL логику, dev_sigma, TTL, two-bar confirm, Telegram формат.
+	•	Всё новое — изолировано в services/data_feeds/, отдельный процесс.
+	•	Только append-only логи; без изменений конфигов, влияющих на скоринг.
+	•	Сначала выведи короткий план, потом имплементируй.
+
+1) Структура сервиса
+
+services/
+  data_feeds/
+    runner.py                  # entrypoint (loop / scheduler)
+    binance_clients.py         # REST/WS connectors
+    calculators.py             # oi_pct, liq_ratio, obi_top, funding/basis utils
+    schemas.py                 # pydantic row models
+    writer.py                  # append-only CSV/Parquet + rotation
+    health.py                  # self-checks & status
+
+2) Config (11 монет, читаем из существующего списка)
+	•	Если уже есть список в конфиге сигналов — переиспользуй его. Если нет — добавь явный список из 11.
+
+feature_flags:
+  enable_data_feeds: true
+
+data_feeds:
+  # Если есть signals.symbols — используй его. Иначе зафиксируй 11 символов здесь:
+  symbols: ["BTCUSDT","ETHUSDT","PUMPUSDT","LUMIAUSDT","YFIUSDT","BLASTUSDT","ANIMEUSDT","<8>","<9>","<10>","<11>"]
+  interval_sec: 30
+  sinks:
+    csv_path: "data/feeds_log.csv"
+    rotate_mb: 200         # ротация логов, чтобы не разрастались
+    keep_files: 14         # хранить ~2 недели
+  providers:
+    oi:      "binance_rest"      # /futures/data/openInterestHist?period=5m
+    funding: "binance_rest"      # /fapi/v1/fundingRate
+    basis:   "binance_rest"      # /fapi/v1/premiumIndex
+    liq:     "binance_ws"        # !forceOrder@arr
+    depth:   "binance_ws"        # <symbol>@depth5@100ms
+  depth_levels: 3
+  concurrency:
+    rest_batch_size: 5
+    ws_max_streams: 11
+
+3) Что собирать (read-only, по всем 11 символам)
+	•	OI (5m): история+текущие, oi_pct = 100*(log(OI_t)-log(OI_{t-1})).
+	•	Funding: последний fundingRate; Basis: из premiumIndex.
+	•	Liquidations (WS): агрегировать в 5m: liq_long_usd, liq_short_usd, liq_ratio=(S−L)/(S+L).
+	•	Order Book Imbalance (depth WS): top-of-book (1..N) → obi_top = bids/(bids+asks), сгладить EMA(5).
+
+4) Логирование (append-only, с ротацией)
+Файл: data/feeds_log.csv (создать, если нет). Одна строка на символ и тик:
+
+timestamp,symbol,oi,oi_pct,funding,basis,liq_long_usd,liq_short_usd,liq_ratio,obi_top,latency_ms,source_errors
+
+•	analysis_log.csv и signals_log.csv не менять.
+	•	Бэктестер читает feeds_log.csv как дополнительный источник.
+
+5) Производительность и масштабирование на 11 символов
+	•	WS-мультиплексирование: объединённый поток !forceOrder@arr, фильтровать по символам; depth-стримы по каждому символу (@depth5@100ms), при необходимости — поочерёдный поллинг (backoff) при лимитах.
+	•	REST-батчинг: OI/Funding/Basis — пачками (параллельно по 5 символов), с retry и jitter.
+	•	Backpressure: если лаг по символу > 3× interval_sec, пропусти один цикл записи и отметь source_errors.
+
+6) Health & safety
+	•	health.py: стейты по каждому фиду/символу (connected, last_msg_age, error_count).
+	•	Отчёт /status: добавить строку data_feeds: OK/DEGRADED, + счетчики по 11 символам.
+	•	Любые сбои не влияют на сигнал-движок; максимум — предупреждение.
+
+7) Интеграция в супервайзер
+	•	Добавить отдельный запуск: python services/data_feeds/runner.py.
+	•	Уважать feature_flags.enable_data_feeds. Если false — сервис не стартует.
+
+8) Acceptance
+	•	Сервис запущен, все 11 символов пишутся в feeds_log.csv (покажи 5 примерных строк).
+	•	Health показывает data_feeds: OK, latency в пределах нормы.
+	•	Никаких изменений сигнал-логики, отчётов MVP и Telegram-формата.
+	•	Бэктестер видит новые поля из feeds_log.csv.

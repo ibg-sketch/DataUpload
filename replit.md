@@ -1,0 +1,46 @@
+# Smart Money Futures Signal Bot
+
+## Overview
+This project is a cryptocurrency futures trading signal bot designed to provide real-time trading signals to Telegram. It analyzes 11 trading pairs using multiple market indicators on 5-minute candles, focusing on institutional-grade VWAP, dual-mode SELL logic, and adaptive Time-To-Live (TTL). The bot's primary purpose is to generate accurate and timely signals for trading, with demonstrated strong performance in backtesting and a focus on identifying profitable opportunities in the crypto futures market.
+
+## User Preferences
+I prefer detailed explanations and clear communication regarding the bot's functionality and any proposed changes. I value iterative development, but please ask before making major changes to the core logic or architecture. Do not make changes to the folder Z or the file Y.
+
+## System Architecture
+The system employs a dual-strategy weighted scoring algorithm with custom indicator weights defined per coin. Signals are generated every 5 minutes based on real-time market data and sent to Telegram. A watchdog mechanism ensures continuous operation and auto-restart capabilities.
+
+**UI/UX Decisions:**
+- Telegram outputs utilize HTML formatting for clear, readable signals, including confidence levels, price targets, durations, and market strength indicators.
+- **Signal Lifecycle (Nov 21, 2025):** Signals can complete in four ways: (1) reaching TP (take-profit), (2) hitting SL (stop-loss), (3) expiring via TTL, or (4) **CANCELLED** when market conditions deteriorate. **Smart Cancellation Logic (Nov 21):** Signals are automatically cancelled when: (a) confidence drops below 30% absolute, (b) opposite signal appears with ≥70% confidence, or (c) market regime shifts against the signal direction (e.g., BUY during Bull→Bear transition, exit from sideways to strong opposite regime). Cancelled signals send Telegram notifications with reply-to threading and automatically close BingX positions. TTL EXPIRED notifications continue for signals reaching time limit.
+
+**Technical Implementations:**
+- **Signal Generation:** Dual-strategy approach with dynamic Time-To-Live (TTL) based on volatility and market strength. A confluence algorithm requires multiple primary signals and passing filters, utilizing an Adaptive VWAP Filter System for optimized signal generation.
+- **Institutional-Grade VWAP:** Enhanced VWAP calculation uses quote volume weighting and weighted sigma for statistically accurate deviation measurement.
+- **Dual-Mode SELL Logic:** Incorporates both Mean-Reversion and Trend-Following modes for robust SELL signal generation.
+- **Self-Learning & Optimization:** Features Calibrated Confidence, a Self-Learning Controller for weight optimization using the Wilson score method, and a Weight Optimizer utilizing logistic regression. ML-optimized indicator weights are applied based on historical signals to maximize win rate.
+- **Effectiveness Tracking & Reporting:** A multi-tier system provides real-time tracking, hourly effectiveness reports (win rate, PnL summary), and daily basic reports with a revised PnL calculation methodology. effectiveness_reporter.py merged into signal_tracker.py for consolidated operation. **Smart Signal Cancellation (Nov 21, 2025):** The check_cancellation() function implements intelligent cancellation based on three criteria: (1) confidence drops below 30% absolute, (2) opposite signal appears with ≥70% confidence, (3) **regime shift against signal direction** - BUY signals cancelled when: bull→bear transition OR neutral→ANY bearish (bear/strong_bear); SELL signals cancelled when: bear→bull transition OR neutral→ANY bullish (bull/strong_bull). Cancelled signals are logged to effectiveness_log.csv with CANCELLED status and current PnL, send English-formatted Telegram notifications with reply-to original message, and trigger automatic BingX position closure. **Technical Implementation:** Signal-ID based deduplication prevents signal_tracker.py from overwriting regime metadata added by main.py, ensuring persistent 'regime' field in active_signals.json.
+- **Enhanced Formula v2:** ML-based profit prediction model (Random Forest Regressor) trained on historical signals.
+- **Hybrid EMA+VWAP Regime Detection:** A 6-regime system combining fast EMA reaction with institutional VWAP reference for earlier reversal detection.
+- **Automated Trading (BingX):** A separate service for automated trading on BingX, including robust risk management. **Position Exit Strategy:** Positions close only via TP (take-profit), SL (stop-loss), or TTL (time expiry). Exit distribution from backtesting: 24% reach TP, 4% hit SL, 71% close at TTL (6:1 TP/SL ratio validates safety). **Parameter Optimization (Nov 17, 2025):** Comprehensive backtest of 2,601 trades over 7 days identified optimal trading parameters: (1) Stop-Loss increased from 2% to 10% of position size (0.20% price movement at 50x leverage), reducing SL hit rate from 91.5% to 56.8% and increasing win rate from 8.1% to 41.9%; (2) Hybrid Take-Profit strategy implemented - BUY signals exit at target_min (conservative, zone start), SELL signals exit at target_max (aggressive, zone end) - optimized for 98.5% SELL signal distribution contributing 99% of profits. Expected performance: +$2,170/week (+$112,865/year). Target zone statistics: 89.4% signals reach zone start, 73.1% reach middle, 59.7% reach end. Configuration: STOP_LOSS_PCT=10, TP_STRATEGY="hybrid" in bingx_trader/config.py. **Fee Structure:** BingX charges 0.05% taker (entry), 0.02% maker (TP limit orders), 0.05% taker (SL/TTL market orders).
+
+**System Design Choices:**
+- **Persistent Alert Queue System:** Ensures no alerts are missed, handling Telegram API failures, service restarts, and race conditions.
+- **Reply-To Mechanism:** Ensures TARGET ZONE/FINAL GOAL alerts and TTL EXPIRED notifications reply to original signal messages for conversation threading.
+- **TTL Expiry Notifications:** Distinct "⏱️ TTL EXPIRED" messages are sent for signals reaching their time limit without hitting TP or SL.
+- **Infrastructure Services:** CVD and Liquidation services store full historical data. CVD Service now maintains rolling history (1000 snapshots) for Order Flow analysis. A dedicated Data Feeds Service collects comprehensive market features for future ML enhancement.
+- **UIF Feature Engine:** Isolated read-only service collecting 4 local technical indicators from CryptoCompare API, writing atomic snapshots and rotating CSV logs for future ML feature engineering.
+- **AI Analyst Service:** Isolated AI-powered service using OpenAI gpt-4o-mini for independent signal analysis, providing triple independent recommendations (confidence, TTL, target), enhanced Telegram display for AI vs Bot comparison, daily summaries, cost controls, and comprehensive CSV logging. It also features an interactive AI query interface via Telegram `/ask_ai` command, allowing analysis of formula performance, indicator effectiveness, and historical trends.
+- **Webhook Architecture:** Switched from long-polling to webhook-based Telegram command handling for cloud compatibility, running the AI Analyst scheduler and webhook server in parallel threads.
+- **Order Flow Indicators (Nov 15-16, 2025):** Advanced market microstructure analysis for detecting psychological levels and bid-ask aggression. **Backtest Results (4,606 signals):** Psychological Level detector shows +20.6% win rate improvement (Clear Zone: 36.3% WR vs Danger Zone: 15.7% WR near round numbers like $96K, $3.2K). **CVD Service Enhancement (Nov 16):** Updated cvd_service.py to store rolling CVD history (1000 points = ~16 minutes) enabling BA Aggression telemetry. **Status:** PRODUCTION ACTIVE - activated Nov 16 09:05 GMT+3 after 3.8h diagnostic validation. Weights: psych_level_risk=0.15, ba_aggression=0.10. System stability confirmed (CVD buffer stable at 1000 points, JSON errors reduced 11→6). **Integration:** Both indicators in smart_signal.py with feature flag enable_order_flow. **Files:** order_flow_indicators.py, backtest_order_flow.py, analysis/results/order_flow_backtest_results.txt.
+
+## External Dependencies
+- **Binance WebSocket:** For real-time Cumulative Volume Delta (CVD) and Liquidation data.
+- **Coinalyze API:** For aggregated cryptocurrency futures data (OHLCV, Open Interest).
+- **CryptoCompare API:** For UIF Feature Engine OHLCV data.
+- **OKX API:** For funding rate data.
+- **Telegram Bot API:** For sending trading signals, TP/SL alerts, and TTL expiry notifications.
+- **Python Libraries:** `requests`, `pandas`, `numpy`, `PyYAML`, `python-dotenv`, `websocket-client`, `scikit-learn`, `scipy`, `openai`.
+- **BingX API:** For automated Perpetual Futures trading.
+- **OpenAI API:** For AI Analyst service market context and daily summaries (gpt-4o-mini model).
+- **BTC Price Correlation Analysis:** Standalone analysis system measuring price correlation between Bitcoin and altcoins, integrated into AI Analyst context.
+- **BTC-Altcoin Lead-Lag Statistical Analysis:** Comprehensive econometric analysis for all 11 coins, combining tick-level and 5-minute candle statistical analysis to identify lead-lag relationships, resulting in trading tiers for coins.

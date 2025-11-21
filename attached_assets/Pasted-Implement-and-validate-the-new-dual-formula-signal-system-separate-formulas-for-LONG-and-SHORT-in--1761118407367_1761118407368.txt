@@ -1,0 +1,77 @@
+Implement and validate the new dual-formula signal system (separate formulas for LONG and SHORT) in shadow-deployment mode, to confirm performance before full production release.
+
+Task Details
+
+Integrate the dual-formula logic
+
+Import and use the existing file dual_formula.py.
+
+Call evaluate_signal() inside the main signal-generation loop of smart_signal.py.
+
+Keep the previous system active in parallel for A/B comparison.
+
+Shadow Mode Operation
+
+Run in shadow mode: log predictions and probabilities, but do not send trade signals yet.
+
+Output results to a CSV or SQLite database with these columns:
+
+ts, symbol, verdict (BUY|SELL), logit, prob, should_send,
+rsi, ema_short, ema_long, ema_diff_pct, price, vwap, vwap_dist,
+volume, volume_median, volume_ratio, atr,
+old_system_decision, old_system_prob,
+latency_ms, spread, fee_bps, slippage_bps
+
+
+Thresholds and Filters
+
+LONG: threshold = 0.30
+RSI 40–70, VWAP distance ≤ 1.0%, volume_ratio 0.5–1.2
+
+SHORT: threshold = 0.50
+RSI < 50, VWAP distance ≤ 0.3%, volume_ratio ≤ 1.0
+
+Time-to-Live (TTL) = 15 min or exit on TP = 0.40 %, SL = 0.30 %.
+
+Comparison and Metrics
+
+Log both the new dual-formula decision and the old system’s decision.
+
+Compute daily and weekly metrics:
+
+precision@signal (for BUY, SELL, and overall)
+
+coverage (signals/day)
+
+net expectancy (after fees and slippage)
+
+Generate CSV reports for each metric.
+
+Safety and Monitoring
+
+Add flags:
+shadow_mode=True, rollback_enabled=True.
+
+Create alerts if:
+
+Signal coverage drops by > 30 %.
+
+Precision < 0.30 or latency > 500 ms.
+
+Deliverables
+
+Updated smart_signal.py with integrated shadow mode.
+
+Logging module (logger.py) that appends structured data to CSV/SQLite.
+
+Optional risk.py handling TTL/TP/SL.
+
+A short report.md summarizing daily metrics.
+
+Acceptance Criteria
+
+✅ Dual-formula logic successfully integrated and running in shadow mode.
+✅ Logs created with all required fields.
+✅ Daily precision and coverage metrics available.
+✅ No API errors or missing data.
+✅ Code ready for switch to full live mode after validation.

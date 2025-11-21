@@ -1,0 +1,66 @@
+
+======================================================================
+CONFIDENCE DISTRIBUTION MONITOR
+======================================================================
+Analyzing confidence score patterns and distribution health
+======================================================================
+
+📊 Loaded 205 signals from signals_log.csv
+
+======================================================================
+CONFIDENCE DISTRIBUTION ANALYSIS
+======================================================================
+Analysis Date: 2025-10-20 18:26:21
+Total Signals Analyzed: 205
+
+📊 OVERALL CONFIDENCE STATISTICS
+----------------------------------------------------------------------
+Min Confidence: 0.6%
+25th Percentile: 0.7%
+Median (50th): 0.7%
+Mean: 0.7%
+75th Percentile: 0.8%
+Max Confidence: 0.9%
+Std Deviation: 0.1%
+
+📈 CONFIDENCE DISTRIBUTION BINS
+----------------------------------------------------------------------
+< 60%       :  205 (100.0%) ██████████████████████████████████████████████████
+60-70%      :    0 (  0.0%) 
+70-75%      :    0 (  0.0%) 
+75-80%      :    0 (  0.0%) 
+80-85%      :    0 (  0.0%) 
+85-90%      :    0 (  0.0%) 
+90-95%      :    0 (  0.0%) 
+95-100%     :    0 (  0.0%) 
+
+🎯 CONFIDENCE VS WIN RATE ANALYSIS
+----------------------------------------------------------------------
+⚠️  No 'result' column - cannot analyze win rates
+
+⚠️  COMPRESSION WARNING CHECKS
+----------------------------------------------------------------------
+✅ Confidence distribution appears healthy
+   Most common: 0.8% (14.1% of signals)
+⚠️  WARNING: Very low standard deviation (0.1%)
+   Confidence scores are very compressed (not much variation)
+⚠️  WARNING: Narrow confidence range (0.4%)
+   All signals fall within a narrow confidence band
+
+📅 TIME-BASED ANALYSIS
+----------------------------------------------------------------------
+⚠️  Insufficient data for time-based comparison
+
+💡 RECOMMENDATIONS
+----------------------------------------------------------------------
+⚠️  Confidence scores show signs of over-compression
+   Actions to consider:
+   1. Review indicator weight balance
+   2. Check if any single indicator dominates scoring
+   3. Ensure confidence formula allows full 70-95% range
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+
+📄 Analysis complete - results shown above

@@ -1,0 +1,217 @@
+================================================================================
+CORRELATION ANALYSIS REPORT
+================================================================================
+Generated: 2025-10-19T11:35:09.622833
+Total Signals Analyzed: 127
+Overall Win Rate: 29.1%
+
+--------------------------------------------------------------------------------
+COIN: ETHUSDT
+--------------------------------------------------------------------------------
+  Sample Size: 23
+  Win Rate: 13.0%
+  Logistic Model Accuracy: 87.0%
+
+  TOP 5 MOST PREDICTIVE INDICATORS:
+    1. verdict_direction
+       Importance Score: 0.193
+       Pearson Corr: +0.163 
+       Mutual Info: 0.000
+       LR Coefficient: +0.418
+    2. target_range_pct
+       Importance Score: 0.189
+       Pearson Corr: -0.095 
+       Mutual Info: 0.000
+       LR Coefficient: -0.473
+    3. confidence
+       Importance Score: 0.093
+       Pearson Corr: -0.097 
+       Mutual Info: 0.001
+       LR Coefficient: -0.181
+    4. market_strength
+       Importance Score: 0.062
+       Pearson Corr: +0.009 
+       Mutual Info: 0.000
+       LR Coefficient: +0.176
+
+--------------------------------------------------------------------------------
+COIN: BNBUSDT
+--------------------------------------------------------------------------------
+  Sample Size: 20
+  Win Rate: 25.0%
+  Logistic Model Accuracy: 75.0%
+
+  TOP 5 MOST PREDICTIVE INDICATORS:
+    1. target_range_pct
+       Importance Score: 0.391
+       Pearson Corr: -0.352 
+       Mutual Info: 0.036
+       LR Coefficient: -0.784
+    2. verdict_direction
+       Importance Score: 0.127
+       Pearson Corr: +0.200 
+       Mutual Info: 0.000
+       LR Coefficient: +0.182
+    3. market_strength
+       Importance Score: 0.113
+       Pearson Corr: -0.126 
+       Mutual Info: 0.042
+       LR Coefficient: +0.173
+    4. confidence
+       Importance Score: 0.064
+       Pearson Corr: -0.058 
+       Mutual Info: 0.089
+       LR Coefficient: -0.044
+
+--------------------------------------------------------------------------------
+COIN: DOGEUSDT
+--------------------------------------------------------------------------------
+  Sample Size: 10
+  Win Rate: 20.0%
+  Logistic Model Accuracy: 90.0%
+
+  TOP 5 MOST PREDICTIVE INDICATORS:
+    1. verdict_direction
+       Importance Score: 0.553
+       Pearson Corr: -0.500 
+       Mutual Info: 0.380
+       LR Coefficient: -0.780
+    2. confidence
+       Importance Score: 0.451
+       Pearson Corr: -0.496 
+       Mutual Info: 0.000
+       LR Coefficient: -0.859
+    3. market_strength
+       Importance Score: 0.386
+       Pearson Corr: -0.586 
+       Mutual Info: 0.043
+       LR Coefficient: -0.529
+    4. target_range_pct
+       Importance Score: 0.184
+       Pearson Corr: -0.326 
+       Mutual Info: 0.035
+       LR Coefficient: -0.191
+
+--------------------------------------------------------------------------------
+COIN: BTCUSDT
+--------------------------------------------------------------------------------
+  Sample Size: 24
+  Win Rate: 25.0%
+  Logistic Model Accuracy: 79.2%
+
+  TOP 5 MOST PREDICTIVE INDICATORS:
+    1. confidence
+       Importance Score: 0.466
+       Pearson Corr: -0.278 
+       Mutual Info: 0.488
+       LR Coefficient: -0.633
+    2. verdict_direction
+       Importance Score: 0.347
+       Pearson Corr: -0.293 
+       Mutual Info: 0.000
+       LR Coefficient: -0.749
+    3. market_strength
+       Importance Score: 0.122
+       Pearson Corr: -0.180 
+       Mutual Info: 0.000
+       LR Coefficient: -0.187
+    4. target_range_pct
+       Importance Score: 0.084
+       Pearson Corr: -0.037 
+       Mutual Info: 0.165
+       LR Coefficient: +0.050
+
+--------------------------------------------------------------------------------
+COIN: LINKUSDT
+--------------------------------------------------------------------------------
+  Sample Size: 16
+  Win Rate: 62.5%
+  Logistic Model Accuracy: 87.5%
+
+  TOP 5 MOST PREDICTIVE INDICATORS:
+    1. target_range_pct
+       Importance Score: 0.619
+       Pearson Corr: -0.614 *
+       Mutual Info: 0.126
+       LR Coefficient: -1.118
+    2. verdict_direction
+       Importance Score: 0.531
+       Pearson Corr: -0.333 
+       Mutual Info: 0.674
+       LR Coefficient: -0.586
+    3. market_strength
+       Importance Score: 0.215
+       Pearson Corr: -0.459 
+       Mutual Info: 0.065
+       LR Coefficient: -0.121
+    4. confidence
+       Importance Score: 0.097
+       Pearson Corr: -0.129 
+       Mutual Info: 0.000
+       LR Coefficient: +0.162
+
+--------------------------------------------------------------------------------
+COIN: SOLUSDT
+--------------------------------------------------------------------------------
+  Sample Size: 18
+  Win Rate: 22.2%
+  Logistic Model Accuracy: 88.9%
+
+  TOP 5 MOST PREDICTIVE INDICATORS:
+    1. market_strength
+       Importance Score: 0.608
+       Pearson Corr: -0.524 *
+       Mutual Info: 0.117
+       LR Coefficient: -1.182
+    2. confidence
+       Importance Score: 0.310
+       Pearson Corr: +0.159 
+       Mutual Info: 0.000
+       LR Coefficient: +0.770
+    3. verdict_direction
+       Importance Score: 0.281
+       Pearson Corr: -0.286 
+       Mutual Info: 0.080
+       LR Coefficient: -0.478
+    4. target_range_pct
+       Importance Score: 0.266
+       Pearson Corr: -0.365 
+       Mutual Info: 0.031
+       LR Coefficient: -0.402
+
+--------------------------------------------------------------------------------
+COIN: AVAXUSDT
+--------------------------------------------------------------------------------
+  Sample Size: 16
+  Win Rate: 43.8%
+  Logistic Model Accuracy: 81.2%
+
+  TOP 5 MOST PREDICTIVE INDICATORS:
+    1. target_range_pct
+       Importance Score: 0.539
+       Pearson Corr: -0.530 *
+       Mutual Info: 0.088
+       LR Coefficient: -1.000
+    2. market_strength
+       Importance Score: 0.392
+       Pearson Corr: -0.483 
+       Mutual Info: 0.072
+       LR Coefficient: -0.622
+    3. verdict_direction
+       Importance Score: 0.367
+       Pearson Corr: +0.048 
+       Mutual Info: 0.686
+       LR Coefficient: -0.367
+    4. confidence
+       Importance Score: 0.138
+       Pearson Corr: -0.022 
+       Mutual Info: 0.000
+       LR Coefficient: +0.392
+
+================================================================================
+LEGEND:
+  * = Statistically significant (p < 0.05)
+  Importance Score = Average of |Pearson|, MI, and |LR Coef|
+  Positive correlation = indicator predicts WIN
+  Negative correlation = indicator predicts LOSS
+================================================================================

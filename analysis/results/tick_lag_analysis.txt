@@ -1,0 +1,21 @@
+TICK-LEVEL LAG ANALYSIS REPORT
+================================================================================
+
+Date: 2025-11-14
+BTC Movements Analyzed: 53
+
+1. TRX: 46.8s avg lag
+   (median: 41.0s, range: 9-103s, n=23)
+
+2. ADA: 5.5s avg lag
+   (median: 5.0s, range: 1-10s, n=53)
+
+3. XRP: 5.3s avg lag
+   (median: 5.0s, range: 1-16s, n=53)
+
+4. LINK: 5.3s avg lag
+   (median: 5.0s, range: 1-10s, n=53)
+
+5. ETH: 5.1s avg lag
+   (median: 5.0s, range: 1-10s, n=35)
+

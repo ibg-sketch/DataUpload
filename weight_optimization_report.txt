@@ -1,0 +1,183 @@
+================================================================================
+WEIGHT OPTIMIZATION REPORT (RAW INDICATOR WEIGHTS)
+================================================================================
+Generated: 2025-11-09T17:27:57.487178
+
+NOTE: This optimizer analyzes RAW indicator values (CVD, OI, VWAP, etc.)
+      and recommends optimal weights for config.yaml
+
+SUMMARY TABLE:
+Coin         Signals    Win Rate     CV Accuracy     Status         
+--------------------------------------------------------------------------------
+ADAUSDT      81           65.4%       43.1% ±22.1%  ✅ Good
+AVAXUSDT     155          56.8%       46.4% ±18.9%  ⚠️  Needs Improvement
+BNBUSDT      121          47.1%       38.0% ±21.1%  ⚠️  Needs Improvement
+BTCUSDT      143          24.5%       55.7% ±26.6%  ⚠️  Needs Improvement
+DOGEUSDT     81           55.6%       60.0% ±32.1%  ⚠️  Needs Improvement
+ETHUSDT      256          37.5%       47.1% ±27.4%  ⚠️  Needs Improvement
+HYPEUSDT     243          45.3%       41.0% ±16.5%  ⚠️  Needs Improvement
+LINKUSDT     95           51.6%        nan% ±nan%  ⚠️  Needs Improvement
+SOLUSDT      178          47.8%       24.8% ±19.2%  ⚠️  Needs Improvement
+XRPUSDT      227          40.5%       37.3% ±16.9%  ⚠️  Needs Improvement
+
+
+--------------------------------------------------------------------------------
+COIN: ETHUSDT
+--------------------------------------------------------------------------------
+  Sample Size: 256
+  Current Win Rate: 37.5%
+  Cross-Validation Accuracy: 47.1% ± 27.4%
+
+  WEIGHT RECOMMENDATIONS:
+
+  📈 cvd_weight           Old: 1.000  →  New: 2.000  (+100.0%)  [Coef: +0.641]
+  📉 liq_weight           Old: 1.000  →  New: 0.548  (-45.2%)  [Coef: +0.020]
+  📉 oi_weight            Old: 1.000  →  New: 0.561  (-43.9%)  [Coef: +0.026]
+  📉 volume_weight        Old: 1.000  →  New: 0.563  (-43.7%)  [Coef: -0.027]
+  📈 vwap_weight          Old: 1.000  →  New: 1.368  (+36.8%)  [Coef: -0.371]
+
+--------------------------------------------------------------------------------
+COIN: HYPEUSDT
+--------------------------------------------------------------------------------
+  Sample Size: 243
+  Current Win Rate: 45.3%
+  Cross-Validation Accuracy: 41.0% ± 16.5%
+
+  WEIGHT RECOMMENDATIONS:
+
+  📈 oi_weight            Old: 1.000  →  New: 2.000  (+100.0%)  [Coef: +0.348]
+  📉 cvd_weight           Old: 1.000  →  New: 0.616  (-38.4%)  [Coef: -0.027]
+  📉 volume_weight        Old: 1.000  →  New: 0.716  (-28.4%)  [Coef: -0.050]
+  📉 vwap_weight          Old: 1.000  →  New: 0.728  (-27.2%)  [Coef: -0.053]
+  ➡️  liq_weight           Old: 1.000  →  New: 0.926  (-7.4%)  [Coef: +0.099]
+
+--------------------------------------------------------------------------------
+COIN: SOLUSDT
+--------------------------------------------------------------------------------
+  Sample Size: 178
+  Current Win Rate: 47.8%
+  Cross-Validation Accuracy: 24.8% ± 19.2%
+
+  WEIGHT RECOMMENDATIONS:
+
+  📈 vwap_weight          Old: 1.000  →  New: 2.000  (+100.0%)  [Coef: -0.506]
+  📈 cvd_weight           Old: 1.000  →  New: 1.556  (+55.6%)  [Coef: +0.356]
+  📉 oi_weight            Old: 1.000  →  New: 0.521  (-47.9%)  [Coef: -0.007]
+  📉 liq_weight           Old: 1.000  →  New: 0.749  (-25.1%)  [Coef: -0.084]
+  📈 volume_weight        Old: 1.000  →  New: 1.147  (+14.7%)  [Coef: -0.218]
+
+--------------------------------------------------------------------------------
+COIN: ADAUSDT
+--------------------------------------------------------------------------------
+  Sample Size: 81
+  Current Win Rate: 65.4%
+  Cross-Validation Accuracy: 43.1% ± 22.1%
+
+  WEIGHT RECOMMENDATIONS:
+
+  📈 vwap_weight          Old: 1.000  →  New: 2.000  (+100.0%)  [Coef: -0.550]
+  📈 volume_weight        Old: 1.000  →  New: 1.768  (+76.8%)  [Coef: -0.465]
+  📈 liq_weight           Old: 1.000  →  New: 1.675  (+67.5%)  [Coef: +0.431]
+  📈 cvd_weight           Old: 1.000  →  New: 1.336  (+33.6%)  [Coef: -0.307]
+  📈 oi_weight            Old: 1.000  →  New: 1.181  (+18.1%)  [Coef: +0.250]
+
+--------------------------------------------------------------------------------
+COIN: BTCUSDT
+--------------------------------------------------------------------------------
+  Sample Size: 143
+  Current Win Rate: 24.5%
+  Cross-Validation Accuracy: 55.7% ± 26.6%
+
+  WEIGHT RECOMMENDATIONS:
+
+  📈 liq_weight           Old: 1.000  →  New: 2.000  (+100.0%)  [Coef: +0.637]
+  📉 volume_weight        Old: 1.000  →  New: 0.572  (-42.8%)  [Coef: +0.031]
+  📈 oi_weight            Old: 1.000  →  New: 1.307  (+30.7%)  [Coef: +0.343]
+  📈 cvd_weight           Old: 1.000  →  New: 1.275  (+27.5%)  [Coef: +0.329]
+  📉 vwap_weight          Old: 1.000  →  New: 0.730  (-27.0%)  [Coef: -0.098]
+
+--------------------------------------------------------------------------------
+COIN: BNBUSDT
+--------------------------------------------------------------------------------
+  Sample Size: 121
+  Current Win Rate: 47.1%
+  Cross-Validation Accuracy: 38.0% ± 21.1%
+
+  WEIGHT RECOMMENDATIONS:
+
+  📈 vwap_weight          Old: 1.000  →  New: 2.000  (+100.0%)  [Coef: -1.010]
+  📈 cvd_weight           Old: 1.000  →  New: 1.780  (+78.0%)  [Coef: +0.862]
+  📉 volume_weight        Old: 1.000  →  New: 0.749  (-25.1%)  [Coef: -0.167]
+  ➡️  liq_weight           Old: 1.000  →  New: 0.950  (-5.0%)  [Coef: +0.303]
+  ➡️  oi_weight            Old: 1.000  →  New: 0.988  (-1.2%)  [Coef: +0.328]
+
+--------------------------------------------------------------------------------
+COIN: AVAXUSDT
+--------------------------------------------------------------------------------
+  Sample Size: 155
+  Current Win Rate: 56.8%
+  Cross-Validation Accuracy: 46.4% ± 18.9%
+
+  WEIGHT RECOMMENDATIONS:
+
+  📈 oi_weight            Old: 1.000  →  New: 2.000  (+100.0%)  [Coef: +0.626]
+  📈 cvd_weight           Old: 1.000  →  New: 1.975  (+97.5%)  [Coef: +0.616]
+  📈 vwap_weight          Old: 1.000  →  New: 1.660  (+66.0%)  [Coef: -0.484]
+  📈 volume_weight        Old: 1.000  →  New: 1.493  (+49.3%)  [Coef: +0.415]
+  📉 liq_weight           Old: 1.000  →  New: 0.705  (-29.5%)  [Coef: -0.085]
+
+--------------------------------------------------------------------------------
+COIN: DOGEUSDT
+--------------------------------------------------------------------------------
+  Sample Size: 81
+  Current Win Rate: 55.6%
+  Cross-Validation Accuracy: 60.0% ± 32.1%
+
+  WEIGHT RECOMMENDATIONS:
+
+  📈 cvd_weight           Old: 1.000  →  New: 2.000  (+100.0%)  [Coef: +1.606]
+  📉 volume_weight        Old: 1.000  →  New: 0.566  (-43.4%)  [Coef: -0.070]
+  📈 vwap_weight          Old: 1.000  →  New: 1.323  (+32.3%)  [Coef: -0.881]
+  📉 oi_weight            Old: 1.000  →  New: 0.883  (-11.7%)  [Coef: +0.410]
+  ➡️  liq_weight           Old: 1.000  →  New: 0.923  (-7.7%)  [Coef: +0.453]
+
+--------------------------------------------------------------------------------
+COIN: XRPUSDT
+--------------------------------------------------------------------------------
+  Sample Size: 227
+  Current Win Rate: 40.5%
+  Cross-Validation Accuracy: 37.3% ± 16.9%
+
+  WEIGHT RECOMMENDATIONS:
+
+  📈 cvd_weight           Old: 1.000  →  New: 2.000  (+100.0%)  [Coef: +0.470]
+  📈 liq_weight           Old: 1.000  →  New: 1.433  (+43.3%)  [Coef: -0.292]
+  📉 volume_weight        Old: 1.000  →  New: 0.659  (-34.1%)  [Coef: -0.050]
+  📈 vwap_weight          Old: 1.000  →  New: 1.335  (+33.5%)  [Coef: -0.262]
+  ➡️  oi_weight            Old: 1.000  →  New: 0.945  (-5.5%)  [Coef: +0.139]
+
+--------------------------------------------------------------------------------
+COIN: LINKUSDT
+--------------------------------------------------------------------------------
+  Sample Size: 95
+  Current Win Rate: 51.6%
+  Cross-Validation Accuracy: nan% ± nan%
+
+  WEIGHT RECOMMENDATIONS:
+
+  📈 liq_weight           Old: 1.000  →  New: 2.000  (+100.0%)  [Coef: -0.799]
+  📉 vwap_weight          Old: 1.000  →  New: 0.614  (-38.6%)  [Coef: -0.061]
+  📉 volume_weight        Old: 1.000  →  New: 0.643  (-35.7%)  [Coef: -0.076]
+  📉 cvd_weight           Old: 1.000  →  New: 0.725  (-27.5%)  [Coef: +0.120]
+  📈 oi_weight            Old: 1.000  →  New: 1.176  (+17.6%)  [Coef: +0.360]
+
+================================================================================
+LEGEND:
+  ✅ = Win rate >= 60% (performing well)
+  ⚠️  = Win rate < 60% (needs improvement)
+  📈 = Weight increased >10%
+  📉 = Weight decreased >10%
+  ➡️  = Weight changed <10%
+  [Coef] = Logistic regression coefficient (+ = bullish, - = bearish)
+  CV Accuracy = Cross-validated prediction accuracy
+================================================================================

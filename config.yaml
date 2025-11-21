@@ -1,0 +1,366 @@
+feature_flags:
+  enable_data_feeds: true
+  enable_synthetic_basis: true
+  enable_basis_in_scoring: true
+  enable_uif_engine: true
+  enable_uif_in_scoring: true  # DIAGNOSTIC ONLY: UIF-12 features with zero weights for telemetry
+  enable_ai_analyst: true  # AI-powered market context and daily summaries
+  enable_order_flow: true  # ORDER FLOW: Bid-Ask Aggression + Psychological Levels (Nov 15-16, 2025) - PRODUCTION ACTIVE
+
+data_feeds:
+  interval_sec: 60
+  sinks:
+    csv_path: "data/feeds_log.csv"
+    rotate_mb: 200
+    keep_files: 14
+  providers:
+    oi: "binance_rest"
+    funding: "binance_rest"
+    basis: "binance_rest"
+    liq: "binance_ws"
+    depth: "binance_ws"
+  depth_levels: 3
+  concurrency:
+    rest_batch_size: 5
+    ws_max_streams: 11
+
+uif_engine:
+  interval_sec: 60
+
+signals:
+  min_conf_base: 0.45
+  sell_confirm2: true
+  dual_mode_sell: true
+vwap_dev_sigma:
+  block_below: 0.3
+  boost_above: 2.0
+  boost_max: 0.2
+ttl:
+  adaptive: true
+safety:
+  kill_switch: true
+report:
+  daily_basic: true
+  time_utc: '18:59'
+  brier_enabled: false
+  quality_gates_enabled: false
+interval: 5m
+lookback_minutes: 5
+vwap_window: 50
+volume_spike_mult: 1.6
+min_confidence: 0.75
+run_once: false
+symbols:
+- BTCUSDT
+- ETHUSDT
+- BNBUSDT
+- SOLUSDT
+- AVAXUSDT
+- DOGEUSDT
+- LINKUSDT
+- XRPUSDT
+- TRXUSDT
+- ADAUSDT
+- HYPEUSDT
+default_coin:
+  weights:
+    cvd: 1.0
+    oi: 0.1
+    vwap: 1.0
+    volume: 1.0
+    liquidations: 1.0
+    funding: 1.0
+    rsi: 1.0
+    ema: 1.0
+    basis_pct: 0.10
+    # UIF-12 features (DIAGNOSTIC ONLY: All weights = 0.0 for telemetry phase)
+    adx14: 0.0
+    psar: 0.0
+    momentum5: 0.0
+    vol_accel: 0.0
+    zcvd: 0.0
+    doi_pct: 0.0
+    dev_sigma: 0.0
+    rsi_dist: 0.0
+    # Order Flow indicators (Nov 15-16, 2025) - PRODUCTION ACTIVE: Validated in 3.8h diagnostic phase
+    ba_aggression: 0.10
+    psych_level_risk: 0.15
+  targets:
+  - 0.4
+  - 0.7
+coin_configs:
+  BTCUSDT:
+    min_score_pct: 0.8
+    min_score_pct_buy: 0.55
+    min_score_pct_sell: 0.6
+    weights:
+      cvd: 1.275
+      oi: 1.307
+      vwap: 0.73
+      volume: 0.572
+      liq: 2.0
+    targets:
+    - 0.8
+    - 1.5
+    cvd_threshold: 20000000
+    atr_multiplier: 0.4
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  ETHUSDT:
+    min_score_pct: 0.8
+    min_score_pct_buy: 0.55
+    min_score_pct_sell: 0.6
+    weights:
+      cvd: 2.0
+      oi: 0.561
+      vwap: 1.368
+      volume: 0.563
+      liq: 0.548
+    targets:
+    - 1.0
+    - 1.8
+    cvd_threshold: 5000000
+    atr_multiplier: 0.45
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  SOLUSDT:
+    min_score_pct: 0.8
+    min_score_pct_buy: 0.55
+    min_score_pct_sell: 0.6
+    weights:
+      cvd: 1.556
+      oi: 0.521
+      vwap: 2.0
+      volume: 1.147
+      liq: 0.749
+    targets:
+    - 1.2
+    - 2.2
+    cvd_threshold: 2000000
+    atr_multiplier: 0.83
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  BNBUSDT:
+    min_score_pct: 0.8
+    min_score_pct_buy: 0.55
+    min_score_pct_sell: 0.6
+    weights:
+      cvd: 1.78
+      oi: 0.988
+      vwap: 2.0
+      volume: 0.749
+      liq: 0.95
+    targets:
+    - 1.0
+    - 1.8
+    cvd_threshold: 1000000
+    atr_multiplier: 0.87
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  LINKUSDT:
+    min_score_pct: 0.8
+    min_score_pct_buy: 0.55
+    min_score_pct_sell: 0.6
+    weights:
+      cvd: 0.725
+      oi: 1.176
+      vwap: 0.614
+      volume: 0.643
+      liq: 2.0
+    targets:
+    - 0.8
+    - 1.5
+    cvd_threshold: 500000
+    atr_multiplier: 1.12
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  AVAXUSDT:
+    min_score_pct: 0.8
+    min_score_pct_buy: 0.55
+    min_score_pct_sell: 0.6
+    weights:
+      cvd: 1.975
+      oi: 2.0
+      vwap: 1.66
+      volume: 1.493
+      liq: 0.705
+    targets:
+    - 1.0
+    - 1.8
+    cvd_threshold: 500000
+    atr_multiplier: 1.46
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  DOGEUSDT:
+    min_score_pct: 0.8
+    min_score_pct_buy: 0.55
+    min_score_pct_sell: 0.6
+    weights:
+      cvd: 2.0
+      oi: 0.883
+      vwap: 1.323
+      volume: 0.566
+      liq: 0.923
+    targets:
+    - 1.2
+    - 2.5
+    cvd_threshold: 1000000
+    atr_multiplier: 2.02
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  XRPUSDT:
+    min_score_pct: 0.8
+    min_score_pct_buy: 0.55
+    min_score_pct_sell: 0.6
+    weights:
+      cvd: 2.0
+      oi: 0.945
+      vwap: 1.335
+      volume: 0.659
+      liq: 1.433
+    targets:
+    - 1.0
+    - 1.8
+    cvd_threshold: 800000
+    atr_multiplier: 0.13
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  TRXUSDT:
+    min_score_pct: 0.8
+    min_score_pct_buy: 0.68
+    min_score_pct_sell: 0.72
+    weights:
+      cvd: 1.3
+      volume: 1.2
+      oi: 0.1
+      vwap: 1.0
+      liquidations: 1.0
+      funding: 0.8
+      rsi: 0.8
+      ema: 0.7
+    targets:
+    - 1.0
+    - 1.8
+    cvd_threshold: 500000
+    atr_multiplier: 0.08
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  ADAUSDT:
+    min_score_pct: 0.8
+    min_score_pct_buy: 0.55
+    min_score_pct_sell: 0.6
+    weights:
+      cvd: 1.336
+      oi: 1.181
+      vwap: 2.0
+      volume: 1.768
+      liq: 1.675
+    targets:
+    - 1.0
+    - 1.8
+    cvd_threshold: 1000000
+    atr_multiplier: 0.18
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  HYPEUSDT:
+    min_score_pct: 0.8
+    min_score_pct_buy: 0.55
+    min_score_pct_sell: 0.6
+    weights:
+      cvd: 0.616
+      oi: 2.0
+      vwap: 0.728
+      volume: 0.716
+      liq: 0.926
+    targets:
+    - 1.2
+    - 2.2
+    cvd_threshold: 300000
+    atr_multiplier: 0.94
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  DOGEUSDT_INTRADAY:
+    min_score_pct: 0.85
+    min_score_pct_buy: 0.795
+    min_score_pct_sell: 0.84
+    weights:
+      oi: 0.15
+      vwap: 1.3
+      cvd: 1.2
+      liquidations: 1.1
+      volume: 1.0
+      rsi: 1.0
+      funding: 0.9
+      ema: 0.8
+    targets:
+    - 1.8
+    - 3.0
+    cvd_threshold: 500000
+  LUMIAUSDT:
+    min_score_pct: 0.85
+    min_score_pct_buy: 0.795
+    min_score_pct_sell: 0.84
+    weights:
+      oi: 0.15
+      vwap: 1.3
+      cvd: 1.2
+      liquidations: 1.1
+      funding: 1.0
+      rsi: 1.0
+      ema: 0.9
+      volume: 0.8
+    targets:
+    - 1.5
+    - 2.5
+    cvd_threshold: 60000
+  ANIMEUSDT:
+    min_score_pct: 0.85
+    min_score_pct_buy: 0.795
+    min_score_pct_sell: 0.84
+    weights:
+      oi: 0.15
+      cvd: 1.3
+      vwap: 1.2
+      liquidations: 1.1
+      volume: 1.0
+      rsi: 1.0
+      funding: 0.9
+      ema: 0.8
+    targets:
+    - 1.5
+    - 3.0
+    cvd_threshold: 250000
+overrides: {}
+
+# AI Analyst Configuration
+ai_analyst:
+  per_signal_enabled: false  # TEMPORARILY DISABLED: Reduces OpenAI rate limit load
+  hourly_effectiveness_enabled: false  # DISABLED: Consumes 30-40 OpenAI calls/hour, blocking /ask_ai
+  daily_summary_enabled: true
+  max_calls_per_hour: 60
+  max_tokens_per_day: 200000
+  timeout_sec: 20
+  max_retries: 2
+

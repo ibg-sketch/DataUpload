@@ -1,0 +1,103 @@
+Goal: подтвердить, что все сервисы живы, снапшоты свежие, логи полные, а индикаторы корректно попадают в расчёт сигнала (вклады = 0 для тех, у кого веса 0; basis_pct влияет по весу 0.10).
+1) Health & Freshness
+
+
+Проверить /status:
+
+
+data_feeds: OK, uif_engine: OK
+
+
+basis_snapshot_age_sec ≤ 90, uif_snapshot_age_sec ≤ 90
+
+
+
+
+Показать список активных символов (11 шт.) и их последний апдейт (≤ 2× polling-интервала).
+
+
+2) Снапшоты (структура и атомарность)
+
+
+Прочитать data/feeds_snapshot.json и data/uif_snapshot.json:
+
+
+Наличие ключей по символам и полей:
+
+
+feeds: basis_pct, provider, updated
+
+
+uif: adx14, psar_state, momentum5, vol_accel, updated
+
+
+
+
+
+
+Смоделировать устаревание (временно переименовать snapshot-файл) и подтвердить:
+
+
+WARN rate-limited (≤ 1/мин), сигнал-драйвер не падает
+
+
+basis_score_component = 0.0 при age > 120s
+
+
+
+
+3) Логи (полнота колонок)
+
+
+analysis_log.csv содержит 16 новых колонок:
+zcvd, doi_pct, dev_sigma_uif, rsi_dist, adx14, psar, momentum5, vol_accel
+и соответствующие *_score_component (все 0.0, кроме basis_score_component).
+
+
+data/feeds_log.csv содержит:
+obi_top, provider_oi, provider_funding, provider_basis, basis_pct, latency_ms
+
+
+4) Расчёт сигнала (сквозная проверка)
+
+
+На 2–3 реальных тиках вывести разложение скора:
+
+
+basis_pct даёт ненулевой basis_score_component при age ≤ 120s
+
+
+Все UIF *_score_component = 0.0 (веса 0), но сырые значения полей (zcvd, adx14, и т.д.) присутствуют.
+
+
+
+
+Подтвердить порядок пайплайна не изменён:
+dev_sigma → block → base_conf → (+ basis) → TTL → SELL confirm2 (если SELL)
+
+
+5) SELL логика
+
+
+Показать один SELL-кейс с полями: regime, confirm2_passed, vwap_cross_down|ema_cross_down.
+
+
+Убедиться, что двухбарное подтверждение работает (0 → 1 на второй свече).
+
+
+6) Acceptance (прошёл/не прошёл)
+
+
+Все health-пункты OK; снапшоты свежие; WARN rate-limited.
+
+
+В логах есть все новые UIF-колонки; *_score_component = 0 (кроме basis).
+
+
+В разложении скора basis влияет только при свежих данных, остальные — нет.
+
+
+BUY/SELL формат сообщений и частота сигналов не изменились.
+
+
+Output: один отчёт в консоль/MD cо скрином /status, 3 строками analysis_log.csv, 5 строками feeds_log.csv, и разложением одного BUY и одного SELL сигнала.

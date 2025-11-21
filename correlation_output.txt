@@ -1,0 +1,38 @@
+================================================================================
+COMPREHENSIVE CORRELATION ANALYSIS - FULL DATASET
+================================================================================
+
+[1] Loading data files...
+  - Analysis log: 184 records
+  - Effectiveness log: 153 records
+  - Signals in analysis log: 19
+
+[2] Merging analysis data with effectiveness outcomes...
+  - Successfully merged: 7 signals
+  - Unmatched: 146 signals
+
+[WARNING] Only 7 signals matched. Data quality may be limited.
+Unmatched signals (first 10):
+  1. 2025-10-19 05:25:03 - ETHUSDT SELL
+  2. 2025-10-19 05:25:04 - BNBUSDT BUY
+  3. 2025-10-19 05:25:07 - DOGEUSDT BUY
+  4. 2025-10-19 05:29:30 - ETHUSDT SELL
+  5. 2025-10-19 05:29:34 - DOGEUSDT BUY
+  6. 2025-10-19 05:40:02 - ETHUSDT SELL
+  7. 2025-10-19 05:29:29 - BTCUSDT SELL
+  8. 2025-10-19 05:29:31 - BNBUSDT BUY
+  9. 2025-10-19 05:30:02 - LINKUSDT SELL
+  10. 2025-10-19 05:45:02 - ETHUSDT SELL
+  - Saved to: full_merged_analysis.csv
+
+================================================================================
+[OVERALL PERFORMANCE]
+================================================================================
+Win Rate: 0W-7L (0.0%)
+Average Profit per Trade: 0.069%
+Total Cumulative P/L: 0.48%
+
+Winning Trades: Avg profit = nan%
+Losing Trades: Avg loss = 0.069%
+
+[ERROR] Insufficient data for correlation analysis (need at least 10 samples)

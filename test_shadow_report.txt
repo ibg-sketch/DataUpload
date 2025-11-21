@@ -1,0 +1,30 @@
+================================================================================
+SHADOW MODE DAILY REPORT
+================================================================================
+
+📊 Signal Metrics:
+  Total evaluations:    2
+  Passed threshold:     1
+  Passed filters:       1
+  Would send signals:   1
+    - LONG signals:     1
+    - SHORT signals:    0
+
+📈 Quality Metrics:
+  Avg probability:      37.21%
+  Coverage (sig/day):   1.0
+  Net expectancy:       -0.190%
+
+🔄 Comparison with Old System:
+  Old system signals:   1
+  Signal reduction:     0.0%
+
+⚡ Performance:
+  Avg latency:          125.3ms
+  Max latency:          125.3ms
+
+🚨 ALERTS:
+  ⚠️ EXPECTANCY ALERT: Negative net expectancy -0.190%
+
+================================================================================
+Generated: 2025-10-22T07:37:40.444900

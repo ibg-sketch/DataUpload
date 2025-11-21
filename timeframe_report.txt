@@ -1,0 +1,115 @@
+================================================================================
+TIMEFRAME OPTIMIZATION REPORT
+================================================================================
+Generated: 2025-10-19T11:41:41.732856
+
+SUMMARY TABLE:
+Coin         Best TF    Win Rate     Sharpe     Samples   
+--------------------------------------------------------------------------------
+AVAXUSDT     1h           80.0%       0.93         5
+BNBUSDT      30m          30.0%      -0.20        10
+BTCUSDT      1h           36.4%       1.04        11
+DOGEUSDT     15m          11.1%      -0.06         9
+ETHUSDT      15m          15.0%      -0.14        20
+LINKUSDT     1h           77.8%       1.06         9
+SOLUSDT      1h           60.0%       0.18         5
+
+
+--------------------------------------------------------------------------------
+COIN: ETHUSDT
+--------------------------------------------------------------------------------
+  Total Signals Analyzed: 23
+  Best Timeframe: 15m (Win Rate: 15.0%, Sharpe: -0.14)
+
+  TIMEFRAME PERFORMANCE:
+
+  ⭐    15m  |  Win Rate:  15.0%  |  Signals:  20  |  Profit Factor:  0.52  |  Sharpe:  -0.14
+            Avg Profit:  -0.13%  |  Avg Win:  +0.93%  |  Avg Loss:  -0.31%
+
+--------------------------------------------------------------------------------
+COIN: BNBUSDT
+--------------------------------------------------------------------------------
+  Total Signals Analyzed: 20
+  Best Timeframe: 30m (Win Rate: 30.0%, Sharpe: -0.20)
+
+  TIMEFRAME PERFORMANCE:
+
+  ⭐    30m  |  Win Rate:  30.0%  |  Signals:  10  |  Profit Factor:  0.50  |  Sharpe:  -0.20
+            Avg Profit:  -0.17%  |  Avg Win:  +0.56%  |  Avg Loss:  -0.48%
+
+        15m  |  Win Rate:  12.5%  |  Signals:   8  |  Profit Factor:  0.45  |  Sharpe:  -0.11
+            Avg Profit:  -0.09%  |  Avg Win:  +0.61%  |  Avg Loss:  -0.19%
+
+--------------------------------------------------------------------------------
+COIN: DOGEUSDT
+--------------------------------------------------------------------------------
+  Total Signals Analyzed: 10
+  Best Timeframe: 15m (Win Rate: 11.1%, Sharpe: -0.06)
+
+  TIMEFRAME PERFORMANCE:
+
+  ⭐    15m  |  Win Rate:  11.1%  |  Signals:   9  |  Profit Factor:  0.72  |  Sharpe:  -0.06
+            Avg Profit:  -0.03%  |  Avg Win:  +0.81%  |  Avg Loss:  -0.14%
+
+--------------------------------------------------------------------------------
+COIN: BTCUSDT
+--------------------------------------------------------------------------------
+  Total Signals Analyzed: 24
+  Best Timeframe: 1h (Win Rate: 36.4%, Sharpe: 1.04)
+
+  TIMEFRAME PERFORMANCE:
+
+  ⭐     1h  |  Win Rate:  36.4%  |  Signals:  11  |  Profit Factor:  3.02  |  Sharpe:   1.04
+            Avg Profit:  +0.18%  |  Avg Win:  +0.36%  |  Avg Loss:  +0.07%
+
+        30m  |  Win Rate:  20.0%  |  Signals:   5  |  Profit Factor:  2.39  |  Sharpe:   0.65
+            Avg Profit:  +0.12%  |  Avg Win:  +0.43%  |  Avg Loss:  +0.04%
+
+        15m  |  Win Rate:  12.5%  |  Signals:   8  |  Profit Factor:  0.09  |  Sharpe:  -0.55
+            Avg Profit:  -0.31%  |  Avg Win:  +0.24%  |  Avg Loss:  -0.38%
+
+--------------------------------------------------------------------------------
+COIN: LINKUSDT
+--------------------------------------------------------------------------------
+  Total Signals Analyzed: 16
+  Best Timeframe: 1h (Win Rate: 77.8%, Sharpe: 1.06)
+
+  TIMEFRAME PERFORMANCE:
+
+  ⭐     1h  |  Win Rate:  77.8%  |  Signals:   9  |  Profit Factor: 10.95  |  Sharpe:   1.06
+            Avg Profit:  +0.43%  |  Avg Win:  +0.61%  |  Avg Loss:  -0.20%
+
+--------------------------------------------------------------------------------
+COIN: SOLUSDT
+--------------------------------------------------------------------------------
+  Total Signals Analyzed: 18
+  Best Timeframe: 1h (Win Rate: 60.0%, Sharpe: 0.18)
+
+  TIMEFRAME PERFORMANCE:
+
+  ⭐     1h  |  Win Rate:  60.0%  |  Signals:   5  |  Profit Factor:  1.53  |  Sharpe:   0.18
+            Avg Profit:  +0.10%  |  Avg Win:  +0.48%  |  Avg Loss:  -0.47%
+
+        15m  |  Win Rate:  11.1%  |  Signals:   9  |  Profit Factor:  0.10  |  Sharpe:  -0.52
+            Avg Profit:  -0.72%  |  Avg Win:  +0.75%  |  Avg Loss:  -0.90%
+
+--------------------------------------------------------------------------------
+COIN: AVAXUSDT
+--------------------------------------------------------------------------------
+  Total Signals Analyzed: 16
+  Best Timeframe: 1h (Win Rate: 80.0%, Sharpe: 0.93)
+
+  TIMEFRAME PERFORMANCE:
+
+  ⭐     1h  |  Win Rate:  80.0%  |  Signals:   5  |  Profit Factor:  6.67  |  Sharpe:   0.93
+            Avg Profit:  +0.62%  |  Avg Win:  +0.92%  |  Avg Loss:  -0.55%
+
+        15m  |  Win Rate:  25.0%  |  Signals:   8  |  Profit Factor:  8.64  |  Sharpe:   0.34
+            Avg Profit:  +0.10%  |  Avg Win:  +0.47%  |  Avg Loss:  -0.02%
+
+================================================================================
+LEGEND:
+  ⭐ = Best timeframe for this coin (highest win rate + Sharpe ratio)
+  Profit Factor = Total Win % / Total Loss % (higher is better)
+  Sharpe Ratio = Risk-adjusted returns (higher is better)
+================================================================================

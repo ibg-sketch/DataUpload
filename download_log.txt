@@ -1,0 +1,403 @@
+================================================================================
+DOWNLOAD HISTORICAL AGGTRADES FROM BINANCE
+================================================================================
+
+📊 Symbols: 11
+📅 Dates: 11
+📁 Output: data/tick_data
+🔢 Total downloads: 121
+
+================================================================================
+STARTING DOWNLOADS...
+================================================================================
+
+
+📅 DATE: 2025-11-05
+--------------------------------------------------------------------------------
+📥 Downloading ADAUSDT 2025-11-05...
+   ✅ Success! CSV: 11.9MB, ZIP: 2.8MB
+   Progress: 1/121 (0.8%)
+📥 Downloading AVAXUSDT 2025-11-05...
+   ✅ Success! CSV: 14.4MB, ZIP: 3.3MB
+   Progress: 2/121 (1.7%)
+📥 Downloading BNBUSDT 2025-11-05...
+   ✅ Success! CSV: 47.9MB, ZIP: 9.8MB
+   Progress: 3/121 (2.5%)
+📥 Downloading BTCUSDT 2025-11-05...
+   ✅ Success! CSV: 156.6MB, ZIP: 28.3MB
+   Progress: 4/121 (3.3%)
+📥 Downloading DOGEUSDT 2025-11-05...
+   ✅ Success! CSV: 25.6MB, ZIP: 5.9MB
+   Progress: 5/121 (4.1%)
+📥 Downloading ETHUSDT 2025-11-05...
+   ✅ Success! CSV: 211.1MB, ZIP: 42.0MB
+   Progress: 6/121 (5.0%)
+📥 Downloading HYPEUSDT 2025-11-05...
+   ✅ Success! CSV: 50.1MB, ZIP: 11.1MB
+   Progress: 7/121 (5.8%)
+📥 Downloading LINKUSDT 2025-11-05...
+   ✅ Success! CSV: 17.2MB, ZIP: 4.2MB
+   Progress: 8/121 (6.6%)
+📥 Downloading SOLUSDT 2025-11-05...
+   ✅ Success! CSV: 39.5MB, ZIP: 9.3MB
+   Progress: 9/121 (7.4%)
+📥 Downloading TRXUSDT 2025-11-05...
+   ✅ Success! CSV: 5.7MB, ZIP: 1.3MB
+   Progress: 10/121 (8.3%)
+📥 Downloading XRPUSDT 2025-11-05...
+   ✅ Success! CSV: 34.4MB, ZIP: 8.3MB
+   Progress: 11/121 (9.1%)
+
+📅 DATE: 2025-11-06
+--------------------------------------------------------------------------------
+📥 Downloading ADAUSDT 2025-11-06...
+   ✅ Success! CSV: 8.8MB, ZIP: 2.1MB
+   Progress: 12/121 (9.9%)
+📥 Downloading AVAXUSDT 2025-11-06...
+   ✅ Success! CSV: 12.1MB, ZIP: 2.8MB
+   Progress: 13/121 (10.7%)
+📥 Downloading BNBUSDT 2025-11-06...
+   ✅ Success! CSV: 35.3MB, ZIP: 7.3MB
+   Progress: 14/121 (11.6%)
+📥 Downloading BTCUSDT 2025-11-06...
+   ✅ Success! CSV: 140.1MB, ZIP: 25.3MB
+   Progress: 15/121 (12.4%)
+📥 Downloading DOGEUSDT 2025-11-06...
+   ✅ Success! CSV: 19.3MB, ZIP: 4.5MB
+   Progress: 16/121 (13.2%)
+📥 Downloading ETHUSDT 2025-11-06...
+   ✅ Success! CSV: 175.7MB, ZIP: 35.1MB
+   Progress: 17/121 (14.0%)
+📥 Downloading HYPEUSDT 2025-11-06...
+   ✅ Success! CSV: 40.5MB, ZIP: 9.1MB
+   Progress: 18/121 (14.9%)
+📥 Downloading LINKUSDT 2025-11-06...
+   ✅ Success! CSV: 14.0MB, ZIP: 3.4MB
+   Progress: 19/121 (15.7%)
+📥 Downloading SOLUSDT 2025-11-06...
+   ✅ Success! CSV: 33.4MB, ZIP: 7.8MB
+   Progress: 20/121 (16.5%)
+📥 Downloading TRXUSDT 2025-11-06...
+   ✅ Success! CSV: 4.8MB, ZIP: 1.1MB
+   Progress: 21/121 (17.4%)
+📥 Downloading XRPUSDT 2025-11-06...
+   ✅ Success! CSV: 30.6MB, ZIP: 7.3MB
+   Progress: 22/121 (18.2%)
+
+📅 DATE: 2025-11-07
+--------------------------------------------------------------------------------
+📥 Downloading ADAUSDT 2025-11-07...
+   ✅ Success! CSV: 13.4MB, ZIP: 3.1MB
+   Progress: 23/121 (19.0%)
+📥 Downloading AVAXUSDT 2025-11-07...
+   ✅ Success! CSV: 19.0MB, ZIP: 4.3MB
+   Progress: 24/121 (19.8%)
+📥 Downloading BNBUSDT 2025-11-07...
+   ✅ Success! CSV: 47.2MB, ZIP: 9.7MB
+   Progress: 25/121 (20.7%)
+📥 Downloading BTCUSDT 2025-11-07...
+   ✅ Success! CSV: 150.9MB, ZIP: 27.4MB
+   Progress: 26/121 (21.5%)
+📥 Downloading DOGEUSDT 2025-11-07...
+   ✅ Success! CSV: 28.6MB, ZIP: 6.7MB
+   Progress: 27/121 (22.3%)
+📥 Downloading ETHUSDT 2025-11-07...
+   ✅ Success! CSV: 205.0MB, ZIP: 40.7MB
+   Progress: 28/121 (23.1%)
+📥 Downloading HYPEUSDT 2025-11-07...
+   ✅ Success! CSV: 49.6MB, ZIP: 11.1MB
+   Progress: 29/121 (24.0%)
+📥 Downloading LINKUSDT 2025-11-07...
+   ✅ Success! CSV: 19.5MB, ZIP: 4.7MB
+   Progress: 30/121 (24.8%)
+📥 Downloading SOLUSDT 2025-11-07...
+   ✅ Success! CSV: 39.5MB, ZIP: 9.3MB
+   Progress: 31/121 (25.6%)
+📥 Downloading TRXUSDT 2025-11-07...
+   ✅ Success! CSV: 6.7MB, ZIP: 1.5MB
+   Progress: 32/121 (26.4%)
+📥 Downloading XRPUSDT 2025-11-07...
+   ✅ Success! CSV: 34.7MB, ZIP: 8.4MB
+   Progress: 33/121 (27.3%)
+
+📅 DATE: 2025-11-08
+--------------------------------------------------------------------------------
+📥 Downloading ADAUSDT 2025-11-08...
+   ✅ Success! CSV: 9.2MB, ZIP: 2.2MB
+   Progress: 34/121 (28.1%)
+📥 Downloading AVAXUSDT 2025-11-08...
+   ✅ Success! CSV: 12.3MB, ZIP: 2.8MB
+   Progress: 35/121 (28.9%)
+📥 Downloading BNBUSDT 2025-11-08...
+   ✅ Success! CSV: 32.6MB, ZIP: 6.8MB
+   Progress: 36/121 (29.8%)
+📥 Downloading BTCUSDT 2025-11-08...
+   ✅ Success! CSV: 64.4MB, ZIP: 11.9MB
+   Progress: 37/121 (30.6%)
+📥 Downloading DOGEUSDT 2025-11-08...
+   ✅ Success! CSV: 19.6MB, ZIP: 4.6MB
+   Progress: 38/121 (31.4%)
+📥 Downloading ETHUSDT 2025-11-08...
+   ✅ Success! CSV: 101.7MB, ZIP: 20.6MB
+   Progress: 39/121 (32.2%)
+📥 Downloading HYPEUSDT 2025-11-08...
+   ✅ Success! CSV: 28.3MB, ZIP: 6.4MB
+   Progress: 40/121 (33.1%)
+📥 Downloading LINKUSDT 2025-11-08...
+   ✅ Success! CSV: 12.2MB, ZIP: 3.0MB
+   Progress: 41/121 (33.9%)
+📥 Downloading SOLUSDT 2025-11-08...
+   ✅ Success! CSV: 22.5MB, ZIP: 5.2MB
+   Progress: 42/121 (34.7%)
+⏭️  TRXUSDT 2025-11-08 - Already exists (4.6MB), skipping
+📥 Downloading XRPUSDT 2025-11-08...
+   ✅ Success! CSV: 19.1MB, ZIP: 4.6MB
+   Progress: 44/121 (36.4%)
+
+📅 DATE: 2025-11-09
+--------------------------------------------------------------------------------
+📥 Downloading ADAUSDT 2025-11-09...
+   ✅ Success! CSV: 8.8MB, ZIP: 2.0MB
+   Progress: 45/121 (37.2%)
+📥 Downloading AVAXUSDT 2025-11-09...
+   ✅ Success! CSV: 10.3MB, ZIP: 2.3MB
+   Progress: 46/121 (38.0%)
+📥 Downloading BNBUSDT 2025-11-09...
+   ✅ Success! CSV: 27.7MB, ZIP: 5.8MB
+   Progress: 47/121 (38.8%)
+📥 Downloading BTCUSDT 2025-11-09...
+   ✅ Success! CSV: 82.6MB, ZIP: 15.1MB
+   Progress: 48/121 (39.7%)
+📥 Downloading DOGEUSDT 2025-11-09...
+   ✅ Success! CSV: 15.7MB, ZIP: 3.7MB
+   Progress: 49/121 (40.5%)
+📥 Downloading ETHUSDT 2025-11-09...
+   ✅ Success! CSV: 113.6MB, ZIP: 22.9MB
+   Progress: 50/121 (41.3%)
+📥 Downloading HYPEUSDT 2025-11-09...
+   ✅ Success! CSV: 25.5MB, ZIP: 5.8MB
+   Progress: 51/121 (42.1%)
+📥 Downloading LINKUSDT 2025-11-09...
+   ✅ Success! CSV: 11.5MB, ZIP: 2.8MB
+   Progress: 52/121 (43.0%)
+⏭️  SOLUSDT 2025-11-09 - Already exists (25.7MB), skipping
+⏭️  TRXUSDT 2025-11-09 - Already exists (3.7MB), skipping
+📥 Downloading XRPUSDT 2025-11-09...
+   ✅ Success! CSV: 21.4MB, ZIP: 5.1MB
+   Progress: 55/121 (45.5%)
+
+📅 DATE: 2025-11-10
+--------------------------------------------------------------------------------
+⏭️  ADAUSDT 2025-11-10 - Already exists (9.1MB), skipping
+📥 Downloading AVAXUSDT 2025-11-10...
+   ✅ Success! CSV: 11.7MB, ZIP: 2.7MB
+   Progress: 57/121 (47.1%)
+📥 Downloading BNBUSDT 2025-11-10...
+   ✅ Success! CSV: 31.2MB, ZIP: 6.5MB
+   Progress: 58/121 (47.9%)
+📥 Downloading BTCUSDT 2025-11-10...
+   ✅ Success! CSV: 107.7MB, ZIP: 19.6MB
+   Progress: 59/121 (48.8%)
+📥 Downloading DOGEUSDT 2025-11-10...
+   ✅ Success! CSV: 20.8MB, ZIP: 4.9MB
+   Progress: 60/121 (49.6%)
+📥 Downloading ETHUSDT 2025-11-10...
+   ✅ Success! CSV: 138.3MB, ZIP: 27.6MB
+   Progress: 61/121 (50.4%)
+⏭️  HYPEUSDT 2025-11-10 - Already exists (29.4MB), skipping
+📥 Downloading LINKUSDT 2025-11-10...
+   ✅ Success! CSV: 14.0MB, ZIP: 3.4MB
+   Progress: 63/121 (52.1%)
+📥 Downloading SOLUSDT 2025-11-10...
+   ✅ Success! CSV: 29.9MB, ZIP: 7.0MB
+   Progress: 64/121 (52.9%)
+📥 Downloading TRXUSDT 2025-11-10...
+   ✅ Success! CSV: 5.0MB, ZIP: 1.1MB
+   Progress: 65/121 (53.7%)
+📥 Downloading XRPUSDT 2025-11-10...
+   ✅ Success! CSV: 37.5MB, ZIP: 9.0MB
+   Progress: 66/121 (54.5%)
+
+📅 DATE: 2025-11-11
+--------------------------------------------------------------------------------
+⏭️  ADAUSDT 2025-11-11 - Already exists (9.8MB), skipping
+⏭️  AVAXUSDT 2025-11-11 - Already exists (12.4MB), skipping
+📥 Downloading BNBUSDT 2025-11-11...
+   ✅ Success! CSV: 32.9MB, ZIP: 6.8MB
+   Progress: 69/121 (57.0%)
+📥 Downloading BTCUSDT 2025-11-11...
+   ✅ Success! CSV: 118.4MB, ZIP: 21.6MB
+   Progress: 70/121 (57.9%)
+📥 Downloading DOGEUSDT 2025-11-11...
+   ✅ Success! CSV: 21.3MB, ZIP: 5.0MB
+   Progress: 71/121 (58.7%)
+📥 Downloading ETHUSDT 2025-11-11...
+   ✅ Success! CSV: 167.0MB, ZIP: 33.3MB
+   Progress: 72/121 (59.5%)
+📥 Downloading HYPEUSDT 2025-11-11...
+   ✅ Success! CSV: 29.8MB, ZIP: 6.7MB
+   Progress: 73/121 (60.3%)
+📥 Downloading LINKUSDT 2025-11-11...
+   ✅ Success! CSV: 15.9MB, ZIP: 3.8MB
+   Progress: 74/121 (61.2%)
+⏭️  SOLUSDT 2025-11-11 - Already exists (32.5MB), skipping
+📥 Downloading TRXUSDT 2025-11-11...
+   ✅ Success! CSV: 6.0MB, ZIP: 1.4MB
+   Progress: 76/121 (62.8%)
+📥 Downloading XRPUSDT 2025-11-11...
+   ✅ Success! CSV: 28.2MB, ZIP: 6.7MB
+   Progress: 77/121 (63.6%)
+
+📅 DATE: 2025-11-12
+--------------------------------------------------------------------------------
+⏭️  ADAUSDT 2025-11-12 - Already exists (6.8MB), skipping
+📥 Downloading AVAXUSDT 2025-11-12...
+   ✅ Success! CSV: 12.4MB, ZIP: 2.8MB
+   Progress: 79/121 (65.3%)
+📥 Downloading BNBUSDT 2025-11-12...
+   ✅ Success! CSV: 30.4MB, ZIP: 6.3MB
+   Progress: 80/121 (66.1%)
+📥 Downloading BTCUSDT 2025-11-12...
+   ✅ Success! CSV: 121.5MB, ZIP: 22.0MB
+   Progress: 81/121 (66.9%)
+📥 Downloading DOGEUSDT 2025-11-12...
+   ✅ Success! CSV: 19.1MB, ZIP: 4.5MB
+   Progress: 82/121 (67.8%)
+📥 Downloading ETHUSDT 2025-11-12...
+   ✅ Success! CSV: 173.8MB, ZIP: 34.6MB
+   Progress: 83/121 (68.6%)
+📥 Downloading HYPEUSDT 2025-11-12...
+   ✅ Success! CSV: 33.2MB, ZIP: 7.4MB
+   Progress: 84/121 (69.4%)
+📥 Downloading LINKUSDT 2025-11-12...
+   ✅ Success! CSV: 15.2MB, ZIP: 3.7MB
+   Progress: 85/121 (70.2%)
+📥 Downloading SOLUSDT 2025-11-12...
+   ✅ Success! CSV: 34.2MB, ZIP: 8.0MB
+   Progress: 86/121 (71.1%)
+📥 Downloading TRXUSDT 2025-11-12...
+   ✅ Success! CSV: 5.0MB, ZIP: 1.2MB
+   Progress: 87/121 (71.9%)
+📥 Downloading XRPUSDT 2025-11-12...
+   ✅ Success! CSV: 27.1MB, ZIP: 6.5MB
+   Progress: 88/121 (72.7%)
+
+📅 DATE: 2025-11-15
+--------------------------------------------------------------------------------
+📥 Downloading ADAUSDT 2025-11-15...
+   ✅ Success! CSV: 6.9MB, ZIP: 1.6MB
+   Progress: 89/121 (73.6%)
+📥 Downloading AVAXUSDT 2025-11-15...
+   ✅ Success! CSV: 8.4MB, ZIP: 1.9MB
+   Progress: 90/121 (74.4%)
+📥 Downloading BNBUSDT 2025-11-15...
+   ✅ Success! CSV: 21.3MB, ZIP: 4.5MB
+   Progress: 91/121 (75.2%)
+📥 Downloading BTCUSDT 2025-11-15...
+   ✅ Success! CSV: 82.7MB, ZIP: 15.3MB
+   Progress: 92/121 (76.0%)
+⏭️  DOGEUSDT 2025-11-15 - Already exists (13.7MB), skipping
+📥 Downloading ETHUSDT 2025-11-15...
+   ✅ Success! CSV: 94.8MB, ZIP: 19.2MB
+   Progress: 94/121 (77.7%)
+📥 Downloading HYPEUSDT 2025-11-15...
+   ✅ Success! CSV: 17.0MB, ZIP: 3.9MB
+   Progress: 95/121 (78.5%)
+📥 Downloading LINKUSDT 2025-11-15...
+   ✅ Success! CSV: 8.1MB, ZIP: 2.0MB
+   Progress: 96/121 (79.3%)
+📥 Downloading SOLUSDT 2025-11-15...
+   ✅ Success! CSV: 22.2MB, ZIP: 5.1MB
+   Progress: 97/121 (80.2%)
+📥 Downloading TRXUSDT 2025-11-15...
+   ✅ Success! CSV: 3.4MB, ZIP: 0.8MB
+   Progress: 98/121 (81.0%)
+📥 Downloading XRPUSDT 2025-11-15...
+   ✅ Success! CSV: 20.6MB, ZIP: 4.9MB
+   Progress: 99/121 (81.8%)
+
+📅 DATE: 2025-11-16
+--------------------------------------------------------------------------------
+📥 Downloading ADAUSDT 2025-11-16...
+   ✅ Success! CSV: 10.4MB, ZIP: 2.4MB
+   Progress: 100/121 (82.6%)
+📥 Downloading AVAXUSDT 2025-11-16...
+   ✅ Success! CSV: 12.7MB, ZIP: 2.9MB
+   Progress: 101/121 (83.5%)
+📥 Downloading BNBUSDT 2025-11-16...
+   ✅ Success! CSV: 31.9MB, ZIP: 6.6MB
+   Progress: 102/121 (84.3%)
+📥 Downloading BTCUSDT 2025-11-16...
+   ✅ Success! CSV: 122.7MB, ZIP: 22.5MB
+   Progress: 103/121 (85.1%)
+📥 Downloading DOGEUSDT 2025-11-16...
+   ✅ Success! CSV: 19.2MB, ZIP: 4.5MB
+   Progress: 104/121 (86.0%)
+📥 Downloading ETHUSDT 2025-11-16...
+   ✅ Success! CSV: 193.8MB, ZIP: 38.5MB
+   Progress: 105/121 (86.8%)
+📥 Downloading HYPEUSDT 2025-11-16...
+   ✅ Success! CSV: 25.6MB, ZIP: 5.8MB
+   Progress: 106/121 (87.6%)
+📥 Downloading LINKUSDT 2025-11-16...
+   ✅ Success! CSV: 13.3MB, ZIP: 3.3MB
+   Progress: 107/121 (88.4%)
+📥 Downloading SOLUSDT 2025-11-16...
+   ✅ Success! CSV: 29.9MB, ZIP: 7.0MB
+   Progress: 108/121 (89.3%)
+📥 Downloading TRXUSDT 2025-11-16...
+   ✅ Success! CSV: 5.3MB, ZIP: 1.2MB
+   Progress: 109/121 (90.1%)
+📥 Downloading XRPUSDT 2025-11-16...
+   ✅ Success! CSV: 28.0MB, ZIP: 6.7MB
+   Progress: 110/121 (90.9%)
+
+📅 DATE: 2025-11-17
+--------------------------------------------------------------------------------
+📥 Downloading ADAUSDT 2025-11-17...
+   ⚠️  Not found (404) - data may not exist for this date
+   Progress: 111/121 (91.7%)
+📥 Downloading AVAXUSDT 2025-11-17...
+   ⚠️  Not found (404) - data may not exist for this date
+   Progress: 112/121 (92.6%)
+📥 Downloading BNBUSDT 2025-11-17...
+   ⚠️  Not found (404) - data may not exist for this date
+   Progress: 113/121 (93.4%)
+📥 Downloading BTCUSDT 2025-11-17...
+   ⚠️  Not found (404) - data may not exist for this date
+   Progress: 114/121 (94.2%)
+📥 Downloading DOGEUSDT 2025-11-17...
+   ⚠️  Not found (404) - data may not exist for this date
+   Progress: 115/121 (95.0%)
+📥 Downloading ETHUSDT 2025-11-17...
+   ⚠️  Not found (404) - data may not exist for this date
+   Progress: 116/121 (95.9%)
+📥 Downloading HYPEUSDT 2025-11-17...
+   ⚠️  Not found (404) - data may not exist for this date
+   Progress: 117/121 (96.7%)
+📥 Downloading LINKUSDT 2025-11-17...
+   ⚠️  Not found (404) - data may not exist for this date
+   Progress: 118/121 (97.5%)
+📥 Downloading SOLUSDT 2025-11-17...
+   ⚠️  Not found (404) - data may not exist for this date
+   Progress: 119/121 (98.3%)
+📥 Downloading TRXUSDT 2025-11-17...
+   ⚠️  Not found (404) - data may not exist for this date
+   Progress: 120/121 (99.2%)
+📥 Downloading XRPUSDT 2025-11-17...
+   ⚠️  Not found (404) - data may not exist for this date
+   Progress: 121/121 (100.0%)
+
+================================================================================
+📊 DOWNLOAD SUMMARY
+================================================================================
+
+⏱️  Total time: 316.8s
+✅ Successful: 110
+⚠️  Not found: 11
+❌ Failed: 0
+📊 Total: 121/121
+
+💾 Total data downloaded: 5.72 GB
+
+================================================================================

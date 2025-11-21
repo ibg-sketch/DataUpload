@@ -1,0 +1,109 @@
+================================================================================
+SEQUENTIAL TRADING SIMULATION WITH REAL HISTORICAL PRICES
+================================================================================
+Starting Balance: $1000.00
+Strategy: One position at a time, all available funds
+Leverage: 50x
+Stop-Loss: 10% of position (0.20% price at 50x)
+Take-Profit: Hybrid strategy (BUY=conservative, SELL=aggressive)
+Data Source: effectiveness_log.csv (REAL historical outcomes)
+================================================================================
+
+📊 Loaded 1126 signals from last 7 days (with valid targets)
+📅 Period: 2025-11-10 14:07 → 2025-11-17 13:36
+
+================================================================================
+SCENARIO 1: Enter OLDEST existing signal after closing
+================================================================================
+
+================================================================================
+SCENARIO 2: Enter only FIRST NEW signal after closing
+================================================================================
+
+================================================================================
+📈 RESULTS: SCENARIO 1 (Oldest Existing Signal)
+================================================================================
+
+💰 Starting Balance: $1000.00
+💵 Final Balance: $159662942369.72
+📊 Total P&L: $+159662941369.72 (+15966294136.97%)
+
+📈 Trading Statistics:
+   Total Trades: 123
+   Wins: 115 (93.5%)
+   Losses: 8 (6.5%)
+   Average Win: $1414532854.78
+   Average Loss: $-376042116.26
+   Profit Factor: 54.07
+
+🎯 Outcome Distribution:
+   WIN: 115 (93.5%)
+   LOSS: 8 (6.5%)
+
+🚪 Exit Distribution:
+   Take-Profit: 115 (93.5%)
+   Stop-Loss: 8 (6.5%)
+
+🏆 Best Trade: $20837672941.22
+   ETHUSDT SELL @ 2025-11-17 13:36
+
+💔 Worst Trade: $-2477867158.96
+   ADAUSDT SELL @ 2025-11-16 13:53
+
+================================================================================
+
+================================================================================
+📈 RESULTS: SCENARIO 2 (Next New Signal Only)
+================================================================================
+
+💰 Starting Balance: $1000.00
+💵 Final Balance: $159662942369.72
+📊 Total P&L: $+159662941369.72 (+15966294136.97%)
+
+📈 Trading Statistics:
+   Total Trades: 123
+   Wins: 115 (93.5%)
+   Losses: 8 (6.5%)
+   Average Win: $1414532854.78
+   Average Loss: $-376042116.26
+   Profit Factor: 54.07
+
+🎯 Outcome Distribution:
+   WIN: 115 (93.5%)
+   LOSS: 8 (6.5%)
+
+🚪 Exit Distribution:
+   Take-Profit: 115 (93.5%)
+   Stop-Loss: 8 (6.5%)
+
+🏆 Best Trade: $20837672941.22
+   ETHUSDT SELL @ 2025-11-17 13:36
+
+💔 Worst Trade: $-2477867158.96
+   ADAUSDT SELL @ 2025-11-16 13:53
+
+================================================================================
+
+================================================================================
+🔄 SCENARIO COMPARISON
+================================================================================
+
+Scenario 1 (Oldest Signal):
+   Trades: 123
+   Final Balance: $159662942369.72
+   ROI: +15966294136.97%
+
+Scenario 2 (Next New Signal):
+   Trades: 123
+   Final Balance: $159662942369.72
+   ROI: +15966294136.97%
+
+📉 Difference:
+   $+0.00 (+0.00%)
+   Better Strategy: Scenario 2 (Next New)
+
+💾 Reports saved:
+   - analysis/results/scenario1_oldest_signal.csv
+   - analysis/results/scenario2_next_new_signal.csv
+
+================================================================================

@@ -1,0 +1,350 @@
+# ===== MVP SETTINGS (FROZEN) =====
+signals:
+  min_conf_base: 0.45
+  sell_confirm2: true
+  dual_mode_sell: true
+
+vwap_dev_sigma:
+  block_below: 0.30
+  boost_above: 2.0
+  boost_max: 0.20
+
+ttl:
+  adaptive: true
+
+safety:
+  kill_switch: true
+
+report:
+  daily_basic: true
+  time_utc: "18:59"
+  brier_enabled: false
+  quality_gates_enabled: false
+
+# ===== LEGACY SETTINGS =====
+interval: 5m
+lookback_minutes: 5
+vwap_window: 50
+volume_spike_mult: 1.6
+min_confidence: 0.75
+run_once: false
+symbols:
+- BTCUSDT
+- ETHUSDT
+- BNBUSDT
+- SOLUSDT
+- AVAXUSDT
+- DOGEUSDT
+- LINKUSDT
+- XRPUSDT
+- TRXUSDT
+- ADAUSDT
+- HYPEUSDT
+default_coin:
+  weights:
+    cvd: 1.0
+    oi: 0.1  # RESTORED: Back to Nov 1 value (was 0.2 on Nov 4)
+    vwap: 1.0
+    volume: 1.0
+    liquidations: 1.0
+    funding: 1.0
+    rsi: 1.0  # Note: SELL gets 2x multiplier in code (corr +0.554 for SELL)
+    ema: 1.0
+  targets:
+  - 0.4
+  - 0.7
+coin_configs:
+  BTCUSDT:
+    min_score_pct: 0.8  # Legacy (kept for compatibility)
+    min_score_pct_buy: 0.68   # RESTORED: Nov 1 value - 0.8 × 0.85 (pattern mining: capture UP movements avg score 0.94)
+    min_score_pct_sell: 0.72  # RESTORED: Nov 1 value - 0.8 × 0.90 (pattern mining: DOWN movements avg score 1.20)
+    weights:
+      cvd: 1.5
+      oi: 0.15
+      vwap: 1.2
+      volume: 1.0
+      liquidations: 1.0
+      funding: 0.9
+      rsi: 0.9
+      ema: 0.8
+    targets:
+    - 0.8
+    - 1.5
+    cvd_threshold: 20000000
+    atr_multiplier: 0.4
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  ETHUSDT:
+    min_score_pct: 0.8  # Legacy (kept for compatibility)
+    min_score_pct_buy: 0.68   # RESTORED: Nov 1 value - 0.8 × 0.85
+    min_score_pct_sell: 0.72  # RESTORED: Nov 1 value - 0.8 × 0.90
+    weights:
+      cvd: 1.5
+      oi: 0.15
+      vwap: 1.2
+      volume: 1.0
+      liquidations: 1.1
+      funding: 0.9
+      rsi: 0.9
+      ema: 0.8
+    targets:
+    - 1.0
+    - 1.8
+    cvd_threshold: 5000000
+    atr_multiplier: 0.45
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  SOLUSDT:
+    min_score_pct: 0.8  # Legacy (kept for compatibility)
+    min_score_pct_buy: 0.68   # RESTORED: Nov 1 value - 0.8 × 0.85
+    min_score_pct_sell: 0.72  # RESTORED: Nov 1 value - 0.8 × 0.90
+    weights:
+      cvd: 1.3
+      volume: 1.2
+      vwap: 1.0
+      oi: 0.1
+      liquidations: 1.0
+      funding: 0.8
+      rsi: 0.9
+      ema: 0.8
+    targets:
+    - 1.2
+    - 2.2
+    cvd_threshold: 2000000
+    atr_multiplier: 0.83
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  BNBUSDT:
+    min_score_pct: 0.8  # Legacy (kept for compatibility)
+    min_score_pct_buy: 0.68   # RESTORED: Nov 1 value - 0.8 × 0.85
+    min_score_pct_sell: 0.72  # RESTORED: Nov 1 value - 0.8 × 0.90
+    weights:
+      cvd: 1.3
+      volume: 1.2
+      oi: 0.1
+      vwap: 1.0
+      liquidations: 1.0
+      funding: 0.8
+      rsi: 0.8
+      ema: 0.7
+    targets:
+    - 1.0
+    - 1.8
+    cvd_threshold: 1000000
+    atr_multiplier: 0.87
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  LINKUSDT:
+    min_score_pct: 0.8  # Legacy (kept for compatibility)
+    min_score_pct_buy: 0.68   # RESTORED: Nov 1 value - 0.8 × 0.85
+    min_score_pct_sell: 0.72  # RESTORED: Nov 1 value - 0.8 × 0.90
+    weights:
+      cvd: 1.3
+      volume: 1.2
+      vwap: 1.0
+      oi: 0.1
+      liquidations: 1.0
+      funding: 0.8
+      rsi: 0.8
+      ema: 0.7
+    targets:
+    - 0.8
+    - 1.5
+    cvd_threshold: 500000
+    atr_multiplier: 1.12
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  AVAXUSDT:
+    min_score_pct: 0.8  # Legacy (kept for compatibility)
+    min_score_pct_buy: 0.68   # RESTORED: Nov 1 value - 0.8 × 0.85
+    min_score_pct_sell: 0.72  # RESTORED: Nov 1 value - 0.8 × 0.90
+    weights:
+      cvd: 1.3
+      volume: 1.2
+      oi: 0.1
+      vwap: 1.0
+      liquidations: 1.0
+      funding: 0.8
+      rsi: 0.8
+      ema: 0.7
+    targets:
+    - 1.0
+    - 1.8
+    cvd_threshold: 500000
+    atr_multiplier: 1.46
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  DOGEUSDT:
+    min_score_pct: 0.8  # Legacy (kept for compatibility)
+    min_score_pct_buy: 0.68   # RESTORED: Nov 1 value - 0.8 × 0.85
+    min_score_pct_sell: 0.72  # RESTORED: Nov 1 value - 0.8 × 0.90
+    weights:
+      volume: 1.5
+      cvd: 1.2
+      liquidations: 1.0
+      rsi: 0.9
+      vwap: 0.8
+      oi: 0.08
+      funding: 0.7
+      ema: 0.7
+    targets:
+    - 1.2
+    - 2.5
+    cvd_threshold: 1000000
+    atr_multiplier: 2.02
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  XRPUSDT:
+    min_score_pct: 0.8  # Legacy (kept for compatibility)
+    min_score_pct_buy: 0.68   # RESTORED: Nov 1 value - 0.8 × 0.85
+    min_score_pct_sell: 0.72  # RESTORED: Nov 1 value - 0.8 × 0.90
+    weights:
+      cvd: 1.3
+      volume: 1.2
+      oi: 0.1
+      vwap: 1.0
+      liquidations: 1.0
+      funding: 0.8
+      rsi: 0.8
+      ema: 0.7
+    targets:
+    - 1.0
+    - 1.8
+    cvd_threshold: 800000
+    atr_multiplier: 0.13
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  TRXUSDT:
+    min_score_pct: 0.8  # Legacy (kept for compatibility)
+    min_score_pct_buy: 0.68   # RESTORED: Nov 1 value - 0.8 × 0.85
+    min_score_pct_sell: 0.72  # RESTORED: Nov 1 value - 0.8 × 0.90
+    weights:
+      cvd: 1.3
+      volume: 1.2
+      oi: 0.1
+      vwap: 1.0
+      liquidations: 1.0
+      funding: 0.8
+      rsi: 0.8
+      ema: 0.7
+    targets:
+    - 1.0
+    - 1.8
+    cvd_threshold: 500000
+    atr_multiplier: 0.08
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  ADAUSDT:
+    min_score_pct: 0.8  # Legacy (kept for compatibility)
+    min_score_pct_buy: 0.68   # RESTORED: Nov 1 value - 0.8 × 0.85
+    min_score_pct_sell: 0.72  # RESTORED: Nov 1 value - 0.8 × 0.90
+    weights:
+      cvd: 1.3
+      volume: 1.2
+      oi: 0.1
+      vwap: 1.0
+      liquidations: 1.0
+      funding: 0.8
+      rsi: 0.8
+      ema: 0.7
+    targets:
+    - 1.0
+    - 1.8
+    cvd_threshold: 1000000
+    atr_multiplier: 0.18
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  HYPEUSDT:
+    min_score_pct: 0.8  # Legacy (kept for compatibility)
+    min_score_pct_buy: 0.68   # RESTORED: Nov 1 value - 0.8 × 0.85
+    min_score_pct_sell: 0.72  # RESTORED: Nov 1 value - 0.8 × 0.90
+    weights:
+      cvd: 1.3
+      volume: 1.2
+      oi: 0.1
+      vwap: 1.0
+      liquidations: 1.0
+      funding: 0.8
+      rsi: 0.8
+      ema: 0.7
+    targets:
+    - 1.2
+    - 2.2
+    cvd_threshold: 300000
+    atr_multiplier: 0.94
+    dev_sigma_thresholds:
+      block_below: 0.3
+      boost_above: 2.0
+      optimized_set: B_default
+  DOGEUSDT_INTRADAY:
+    min_score_pct: 0.85  # Legacy (kept for compatibility)
+    min_score_pct_buy: 0.795  # RECALIBRATED: 0.7225 × 1.10 = 0.795 | 0.85 × 0.85
+    min_score_pct_sell: 0.84   # RECALIBRATED: 0.765 × 1.10 = 0.84 | 0.85 × 0.90
+    weights:
+      oi: 0.15
+      vwap: 1.3
+      cvd: 1.2
+      liquidations: 1.1
+      volume: 1.0
+      rsi: 1.0
+      funding: 0.9
+      ema: 0.8
+    targets:
+    - 1.8
+    - 3.0
+    cvd_threshold: 500000
+  LUMIAUSDT:
+    min_score_pct: 0.85  # Legacy (kept for compatibility)
+    min_score_pct_buy: 0.795  # RECALIBRATED: 0.7225 × 1.10 = 0.795 | 0.85 × 0.85
+    min_score_pct_sell: 0.84   # RECALIBRATED: 0.765 × 1.10 = 0.84 | 0.85 × 0.90
+    weights:
+      oi: 0.15
+      vwap: 1.3
+      cvd: 1.2
+      liquidations: 1.1
+      funding: 1.0
+      rsi: 1.0
+      ema: 0.9
+      volume: 0.8
+    targets:
+    - 1.5
+    - 2.5
+    cvd_threshold: 60000
+  ANIMEUSDT:
+    min_score_pct: 0.85  # Legacy (kept for compatibility)
+    min_score_pct_buy: 0.795  # RECALIBRATED: 0.7225 × 1.10 = 0.795 | 0.85 × 0.85
+    min_score_pct_sell: 0.84   # RECALIBRATED: 0.765 × 1.10 = 0.84 | 0.85 × 0.90
+    weights:
+      oi: 0.15
+      cvd: 1.3
+      vwap: 1.2
+      liquidations: 1.1
+      volume: 1.0
+      rsi: 1.0
+      funding: 0.9
+      ema: 0.8
+    targets:
+    - 1.5
+    - 3.0
+    cvd_threshold: 250000
+overrides: {}

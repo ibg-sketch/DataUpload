@@ -1,0 +1,14 @@
+======================================================================
+ORDER FLOW INDICATORS - BACKTEST RESULTS
+======================================================================
+Date: 2025-11-15 21:28:58
+Total Signals Analyzed: 4606
+
+PSYCHOLOGICAL LEVELS:
+  Danger Zone WR: 15.7%
+  Clear Zone WR: 36.3%
+  Improvement: +20.6%
+
+RECOMMENDED WEIGHTS:
+  psych_level_risk: 0.15
+  ba_aggression: 0.00

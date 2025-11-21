@@ -1,0 +1,77 @@
+
+================================================================================
+BTC PRICE CORRELATION ANALYSIS REPORT
+================================================================================
+
+Analyzed 10 altcoins vs BTCUSDT
+Data points: 365 candles (5-minute)
+
+--------------------------------------------------------------------------------
+CORRELATION RANKINGS (Highest to Lowest)
+--------------------------------------------------------------------------------
+
+ETHUSDT:
+  Correlation:  +0.8422 ✅ (p=0.0000)
+  Speed:        synchronous
+  Similarity:   77.3% (282 same, 83 opposite)
+
+BNBUSDT:
+  Correlation:  +0.7911 ✅ (p=0.0000)
+  Speed:        synchronous
+  Similarity:   66.6% (243 same, 122 opposite)
+
+ADAUSDT:
+  Correlation:  +0.7347 ✅ (p=0.0000)
+  Speed:        synchronous
+  Similarity:   58.9% (215 same, 150 opposite)
+
+SOLUSDT:
+  Correlation:  +0.6881 ✅ (p=0.0000)
+  Speed:        synchronous
+  Similarity:   59.5% (217 same, 148 opposite)
+
+AVAXUSDT:
+  Correlation:  +0.6803 ✅ (p=0.0000)
+  Speed:        synchronous
+  Similarity:   66.6% (243 same, 122 opposite)
+
+TRXUSDT:
+  Correlation:  +0.6571 ✅ (p=0.0000)
+  Speed:        synchronous
+  Similarity:   52.9% (193 same, 172 opposite)
+
+DOGEUSDT:
+  Correlation:  +0.6564 ✅ (p=0.0000)
+  Speed:        synchronous
+  Similarity:   62.5% (228 same, 137 opposite)
+
+LINKUSDT:
+  Correlation:  +0.6448 ✅ (p=0.0000)
+  Speed:        synchronous
+  Similarity:   57.3% (209 same, 156 opposite)
+
+HYPEUSDT:
+  Correlation:  +0.6431 ✅ (p=0.0000)
+  Speed:        synchronous
+  Similarity:   59.7% (218 same, 147 opposite)
+
+XRPUSDT:
+  Correlation:  +0.6309 ✅ (p=0.0000)
+  Speed:        synchronous
+  Similarity:   53.7% (196 same, 169 opposite)
+
+--------------------------------------------------------------------------------
+KEY INSIGHTS
+--------------------------------------------------------------------------------
+
+• High correlation (>0.7): 3 coins
+  ETHUSDT, BNBUSDT, ADAUSDT
+
+• Coins that LEAD BTC: 0
+
+• Coins that LAG BTC: 0
+
+• High directional similarity (>75%): 1 coins
+  ETHUSDT
+
+================================================================================
