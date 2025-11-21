@@ -1,0 +1,92 @@
+# Environment variables and secrets
+.env
+*.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Logs
+log.txt
+*.log
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Replit
+.cache/
+.config/
+.local/
+.upm/
+.pythonlibs/
+
+# Trading Data - DO NOT COMMIT TO GITHUB
+*.csv
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!configs/*.json
+data/
+reports/
+historical_data/
+
+# Temporary/Backup Files
+*_BROKEN_*.csv
+*_BROKEN_*.json
+*_old.csv
+*_old.json
+
+# Large binary files
+*.so
+*.so.*
+*.dylib
+*.dll
+
+# Python cache
+*.pyc
+__pycache__/
+
+# Analysis and logs
+analysis_log.csv
+feeds_log.csv
+
+# Git backups
+.git_backup_*/
