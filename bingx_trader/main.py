@@ -7,7 +7,7 @@ import time
 import traceback
 from typing import Dict
 from datetime import datetime
-from .config import TradingConfig, PaperTradingConfig
+from bingx_trader.config import TradingConfig, PaperTradingConfig
 from .bingx_client import BingXClient
 from .position_manager import PositionManager
 from .risk_manager import RiskManager
