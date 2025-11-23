@@ -9,3 +9,4 @@ pydantic
 websockets
 openai
 flask
+pandas
